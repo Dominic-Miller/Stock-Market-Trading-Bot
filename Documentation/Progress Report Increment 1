@@ -42,10 +42,21 @@ c) the implementation and testing document, including the sections they wrote or
 d) the source code (be detailed about which parts of the system each team member contributed to
 and how)
 e) the video or presentation
+- Dominic Miller: A) Wrote the description of our project, plans for our next increment, and contributed 
+  to the challenges we faced in this increment for the progrss report document. B) C) 
+  D) Set up the GitHub layout and created a group of issues that need to be addressed in this project. 
+  Found the ticker data for a handful of stocks that will be useful in training our model and began 
+  developing the trading bot's backend. E) 
+- Kian Haghighi: A) B) C) D) E)
+- Edwin Laguerre: A) B) C) D) E) 
+- Ilya Kogan: A) B) C) D) E) 
 
 6) Plans for the next increment
-If this report if for the first or second increment, describe what are you planning to achieve in the
-next increment.
+- In the next increment, we plan on fully implementing the backend for this project. This will include 
+  writing all the code needed to train our ML bots and actually training our models so that when we
+  finish our web application, we can simply connect the backend to this application and the simulations
+  will run based on user input. We also plan to create the framework for our web application, like the user
+  authentication, so once we get to increment 3 we can begin working immediately.
 
 7) Link to video
 Paste here the link to your video.
