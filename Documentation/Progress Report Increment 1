@@ -3,21 +3,26 @@ Progress Report
 Group #14
 
 1) Team Members
-Please write the name of all the team members, their FSU IDs, and GitHub IDs here.
-Kian Haghighi (FSU ID: kh21e, GitHub ID: KianHaghighi)
-Dominic Miller (FSU ID: dgm21, Github ID: Dominic-Miller)
-Edwin Laguerre (FSU ID: el21l, Github ID: Edwinlaguerre)
+- Kian Haghighi (FSU ID: kh21e, GitHub ID: KianHaghighi)
+- Dominic Miller (FSU ID: dgm21, Github ID: Dominic-Miller)
+- Edwin Laguerre (FSU ID: el21l, Github ID: Edwinlaguerre)
+- Ilya Kogan (FSU ID: , Github ID: kogan782)
 
 2) Project Title and Description
-Briefly describe your project.
-Stock Market Trading Bot
+- Stock Market Trading Bot
+- The idea behind this project is to develop a web application where users can go in and create their 
+  own portfolio of stocks from a handful of available options to be traded by a ML bot. The bot will 
+  track 1 minute tickers of the stock data and day trade based on the assumption a stock will always 
+  fall back to its mean price (if a stock deviates too much from its mean buy/sell that stock). Run a 
+  simulation on this data and portfolio contents over the previous year and see what the earnings would 
+  have looked like.
 
 3) Accomplishments and overall project status during this increment
 Describe in detail what was accomplished during this increment and where your project stands
 overall compared to the initial scope and functionality proposed.
-1. User Authentication and Registration
-2. Real-Time Market Data
-3. Basic Historical Data Analysis - visualizations, ratios, etc
+- 1. User Authentication and Registration
+- 2. Real-Time Market Data
+- 3. Basic Historical Data Analysis - visualizations, ratios, etc
 
 4) Challenges, changes in the plan and scope of the project and things that went wrong during this
 increment
