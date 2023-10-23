@@ -7,18 +7,35 @@ Authors: Dominic Miller, Kian Haghighi, Edwin Laguerre, Ilya Kogan
 List the programming languages use in your project, where you use them (what components of
 your project) and your reason for choosing them (whatever that may be).
 
+1. Python: We use Python almost exclusively for the backend of the project including the
+  accessing of data and training of our trading bot. We chose Python since it has many
+  built in libraries like Tensorflow, pandas, numpy, etc... and this works well with
+  machine learning and data management.
+2. HTML:
+3. Django:
+4. CSS:
+
 2. Platforms, APIs, Databases, and other technologies used
 List all the platforms, APIs, Databases, and any other technologies you use in your project and
 where you use them (in what components of your project).
+
+1. Tiingo: We used Tiingo (a financial markets API) to pull the 1-minute ticker data for our project
+  in the Get_Data.ipynb Jupyter Notebook in the backend source code.
 
 3. Execution-based Functional Testing
 Describe how/if you performed functional testing for your project (i.e., tested for the functional
 requirements listed in your RD).
 
+-
+
 4. Execution-based Non-Functional Testing
 Describe how/if you performed non-functional testing for your project (i.e., tested for the non-
 functional requirements listed in your RD).
 
+-
+
 5. Non-Execution-based Testing
 Describe how/if you performed non-execution-based testing (such as code
 reviews/inspections/walkthroughs).
+
+-
