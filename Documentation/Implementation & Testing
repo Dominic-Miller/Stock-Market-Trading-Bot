@@ -22,6 +22,11 @@ where you use them (in what components of your project).
 1. Tiingo: We used Tiingo (a financial markets API) to pull the 1-minute ticker data for our project
   in the Get_Data.ipynb Jupyter Notebook in the backend source code.
 
+
+------------------------------------------------------------------------------------------------------
+                                      Increment 2-3
+------------------------------------------------------------------------------------------------------
+
 3. Execution-based Functional Testing
 Describe how/if you performed functional testing for your project (i.e., tested for the functional
 requirements listed in your RD).
