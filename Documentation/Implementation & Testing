@@ -15,7 +15,9 @@ your project) and your reason for choosing them (whatever that may be).
   develop a webpage with the help of django's template engine. It uses templatesto display 
   market trends and allow users to interact with the trading bot through a web interface.
 3. Django:
-4. CSS:
+4. CSS: We will use CSS and implement it into our HTML documents, to make the data shown more 
+   presentable and help make the layout look better. It will create a more responsive web-design,
+   improve readability for users while making it more visually appealing.
 
 2. Platforms, APIs, Databases, and other technologies used
 List all the platforms, APIs, Databases, and any other technologies you use in your project and
