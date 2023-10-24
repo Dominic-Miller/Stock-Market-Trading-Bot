@@ -16,7 +16,8 @@ from the desire to simulate real-time financial markets, offering users valuable
 representations of market fluctuations. The automated trading capabilities save time and enable the implementation 
 of intricate trading strategies. Operating around the clock, the bot executes trades when users are unavailable and 
 offers the ability to backtest trading strategies with historical data while mitigating irrational trading decisions 
-influenced by emotions.
+influenced by emotions. It will provide a clear and intuitive dashboard that shows users the overview of the portfolio's
+performance, recent trades, and market trends presenting data in an easily digestable form.
 
 
 2. Functional Requirements
