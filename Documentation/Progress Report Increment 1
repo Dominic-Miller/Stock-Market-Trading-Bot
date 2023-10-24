@@ -85,7 +85,10 @@ and back-end will work together B) Wrote sections 1,2,3,6 of the Software Requir
 implementation and design document 
 D)Wrote the Django code and set up the virtual enviornment E)Discussed the front-end in the video
 
-- Edwin Laguerre: A) B) C) D) E) 
+- Edwin Laguerre: A)Did not write much on the progress report besides the anwers to this question B)Helped when discussing how we were gonna go
+about the design and what features will be added C) Did not write anything in the implementation and testing document since I have yet to 
+implement any code D) I have yet to add anything to the source code E) Talked about the models we were going to use within our code for specific
+parts and functionality 
 
 - Ilya Kogan: A) Talked about some of the challenges on the front-end side of things, and discussed some
   of the tools used such as HTML and CSS. Discussed how CSS will be implemented into the next increment and 
