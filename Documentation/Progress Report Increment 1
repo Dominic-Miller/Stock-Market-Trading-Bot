@@ -32,6 +32,10 @@ Group #14
   are prepared for the future increments. We have a bulk of issues in the backlog which allows us a good framework
   to develop in increments 2 & 3. This is how we initially planned our project to go and we believe this is as 
   functional as it needs to be for the future of our project.
+- 4. Web layout: When working on this increment, HTML and Django was used to create a layout of what the 
+  user will see on the webpage. Provides a framework on how to implement CSS to style HTML elements, to 
+  make it more user friendly. The webpage be what the user see's and how they interact with trades with the
+  ML-trading bot.
 
 4) Challenges, changes in the plan and scope of the project and things that went wrong during this increment
 
