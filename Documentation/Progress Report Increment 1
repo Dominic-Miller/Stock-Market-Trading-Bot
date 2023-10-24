@@ -58,15 +58,6 @@ Group #14
   as to how to implement it the best way possible, where it is easy for the user to understand.
 
 5) Team Member Contribution for this increment
-Please list each individual member and their contributions to each of the deliverables in this
-increment (be as detailed as possible). In other words, describe the contribution of each team
-member to:
-a) the progress report, including the sections they wrote or contributed to
-b) the requirements and design document, including the sections they wrote or contributed to
-c) the implementation and testing document, including the sections they wrote or contributed to
-d) the source code (be detailed about which parts of the system each team member contributed to
-and how)
-e) the video or presentation
 
 - Dominic Miller: A) Wrote the description of our project, accomplishment this increment,
   challenges faced in this increment, and plans for our next increment for the progrss report 
@@ -80,15 +71,17 @@ e) the video or presentation
   the description and demo for the backend of our project, the changes in scope during this increment, 
   and the plans for next increment for the video.
 
-- Kian Haghighi: A)Documented the struggles of combining Django with the HTMl templates for a functional front-end, planned how the front-end 
-and back-end will work together B) Wrote sections 1,2,3,6 of the Software Requirements and Design Document C) Wrote about Django in the 
-implementation and design document in the "5-develop-web-app" branch
-D)Wrote the Django code and set up the virtual environment E)Discussed the front-end in the video
+- Kian Haghighi: A)Documented the struggles of combining Django with the HTMl templates for a functional 
+  front-end, planned how the front-end and back-end will work together B) Wrote sections 1,2,3,6 of the 
+  Software Requirements and Design Document C) Wrote about Django in the implementation and design document 
+  in the "5-develop-web-app" branch D)Wrote the Django code and set up the virtual environment E) Discussed 
+  the front-end in the video
 
-- Edwin Laguerre: A)Did not write much on the progress report besides the anwers to this question B)Helped when discussing how we were gonna go
-about the design and what features will be added C) Did not write anything in the implementation and testing document since I have yet to 
-implement any code D) I have yet to add anything to the source code E) Talked about the models we were going to use within our code for specific
-parts and functionality 
+- Edwin Laguerre: A) Did not write much on the progress report besides the anwers to this question B) Helped 
+  when discussing how we were gonna go about the design and what features will be added C) Did not write 
+  anything in the implementation and testing document since I have yet to implement any code D) I have yet to 
+  add anything to the source code E) Talked about the models we were going to use within our code for specific
+  parts and functionality 
 
 - Ilya Kogan: A) Talked about some of the challenges on the front-end side of things, and discussed some
   of the tools used such as HTML and CSS. Discussed how CSS will be implemented into the next increment and 
@@ -110,4 +103,4 @@ parts and functionality
   be implemented to HTML templates to control the presentation and layout of webpage offered.
 
 7) Link to video
-https://youtu.be/Y0Ba4BHlwGY
+- https://youtu.be/Y0Ba4BHlwGY
