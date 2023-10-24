@@ -98,7 +98,9 @@ e) the video or presentation
   writing all the code needed to train our ML bots and actually training our models so that when we
   finish our web application, we can simply connect the backend to this application and the simulations
   will run based on user input. We also plan to create the framework for our web application, like the user
-  authentication, so once we get to increment 3 we can begin working immediately.
+  authentication, so once we get to increment 3 we can begin working immediately. For the front-end we will
+  brush up on the display to make it more easier for the user to enter in data as well as display it. CSS will
+  be implemented to HTML templates to control the presentation and layout of webpage offered.
 
 7) Link to video
 https://youtu.be/Y0Ba4BHlwGY
