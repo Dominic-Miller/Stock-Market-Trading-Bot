@@ -84,7 +84,14 @@ e) the video or presentation
 
 - Edwin Laguerre: A) B) C) D) E) 
 
-- Ilya Kogan: A) B) C) D) E) 
+- Ilya Kogan: A) Talked about some of the challenges on the front-end side of things, and discussed some
+  of the tools used such as HTML and CSS. B) Discussed in the overview how users will interact with the 
+  the trading bot and how it will be implemented. C) Discussed how HTML was used to interact with Django for 
+  the webpage layout, and provided a foundation to how it will implemented. D) Focused on the front-end 
+  side of things, created a Template folder that stores the HTML file that interacts with Django. Will 
+  display to users market trends and trades that can be made. E) Described what the HTML file does and 
+  how it interacts with Django, and displayed the webpage where a user can interact with a trading bot
+  to see trends through a web interface.
 
 6) Plans for the next increment
 - In the next increment, we plan on fully implementing the backend for this project. This will include 
