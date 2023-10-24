@@ -71,7 +71,7 @@ e) the video or presentation
 - Dominic Miller: A) Wrote the description of our project, accomplishment this increment,
   challenges faced in this increment, and plans for our next increment for the progrss report 
   document. B) Contributed to the layout of the requirements and design document along with the 
-  functional and non-functional requriements gathering. C) Wrote the use of Python in our project
+  functional and non-functional requirements gathering. C) Wrote the use of Python in our project
   along with the use of Tiingo, our financial market API. D) Set up the GitHub layout and created a 
   group of issues that need to be addressed in this project. Found the ticker data for a handful of 
   stocks that will be useful in training our model and began developing the trading bot's backend. 
@@ -80,7 +80,10 @@ e) the video or presentation
   the description and demo for the backend of our project, the changes in scope during this increment, 
   and the plans for next increment for the video.
 
-- Kian Haghighi: A) B) C) D) E)
+- Kian Haghighi: A)Documented the struggles of combining Django with the HTMl templates for a functional front-end, planned how the front-end 
+and back-end will work together B) Wrote sections 1,2,3,6 of the Software Requirements and Design Document C) Wrote about Django in the 
+implementation and design document 
+D)Wrote the Django code and set up the virtual enviornment E)Discussed the front-end in the video
 
 - Edwin Laguerre: A) B) C) D) E) 
 
