@@ -53,6 +53,9 @@ Group #14
   We originally hoped to implement C++ into our project since this is the langauge we are all taught at FSU,
   however we now realize that this will be much more difficult and we will stick to Python for the backend  
   since it connects much nicer with the frontend.
+- 4. Web Page: Time was spent thinking about how to design the web page to make it more user friendly. Since
+  HTML and CSS are tools that haven't been used often in our curriculum, there is a bit of a learning curve
+  as to how to implement it the best way possible, where it is easy for the user to understand.
 
 5) Team Member Contribution for this increment
 Please list each individual member and their contributions to each of the deliverables in this
