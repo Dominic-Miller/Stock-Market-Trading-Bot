@@ -82,8 +82,8 @@ e) the video or presentation
 
 - Kian Haghighi: A)Documented the struggles of combining Django with the HTMl templates for a functional front-end, planned how the front-end 
 and back-end will work together B) Wrote sections 1,2,3,6 of the Software Requirements and Design Document C) Wrote about Django in the 
-implementation and design document 
-D)Wrote the Django code and set up the virtual enviornment E)Discussed the front-end in the video
+implementation and design document in the "5-develop-web-app" branch
+D)Wrote the Django code and set up the virtual environment E)Discussed the front-end in the video
 
 - Edwin Laguerre: A)Did not write much on the progress report besides the anwers to this question B)Helped when discussing how we were gonna go
 about the design and what features will be added C) Did not write anything in the implementation and testing document since I have yet to 
