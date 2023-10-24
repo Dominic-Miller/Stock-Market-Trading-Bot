@@ -12,9 +12,8 @@ your project) and your reason for choosing them (whatever that may be).
   built in libraries like Tensorflow, pandas, numpy, etc... and this works well with
   machine learning and data management.
 2. HTML: We used HTML to interact with and serve as a template to django allowing us to 
-         develop a webpage with the help of django's template engine. It uses templates
-         to display market trends and allow users to interact with the trading bot through
-         a web interface.
+  develop a webpage with the help of django's template engine. It uses templatesto display 
+  market trends and allow users to interact with the trading bot through a web interface.
 3. Django:
 4. CSS:
 
