@@ -25,6 +25,8 @@ while (numClasses < 1 or numClasses > 2):
         classA = input("Ticker name for the stock: ")
         data1 = pd.read_csv('./Data/' + classA + '.csv').iloc[:, 1:]
         print("Data loaded for: " + classA)
+        # Note: If only 1 class, we need another dataset to compare this class to for 
+        # the SVM model to work properly
     elif (numClasses == 2):
         classA = input("Ticker name for the first class: ")
         classB = input("Ticker name for the second class: ")
