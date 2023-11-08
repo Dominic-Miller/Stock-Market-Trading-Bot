@@ -4,8 +4,8 @@ import pandas as pd
 import numpy as np
 # import matplotlib.pyplot as plt
 
-from sklearn import preprocessing
-from sklearn.model_selection import TimeSeriesSplit
+# from sklearn import preprocessing
+# from sklearn.model_selection import TimeSeriesSplit
 
 import pickle
 
@@ -15,19 +15,23 @@ import pickle
 
 # Get in the number of classes and their ticker names from user
 # Open up the data files that the user specified
+
 numClasses = 0
 classA = " "
 classB = " "
 while (numClasses < 1 or numClasses > 2):
-    numClasses = input("Number of classes for this stock (1 or 2): ")
+    numClasses = int(input("Number of classes for this stock (1 or 2): "))
     if (numClasses == 1):
         classA = input("Ticker name for the stock: ")
         data1 = pd.read_csv('./Data/' + classA + '.csv').iloc[:, 1:]
+        print("Data loaded for: " + classA)
     elif (numClasses == 2):
         classA = input("Ticker name for the first class: ")
         classB = input("Ticker name for the second class: ")
         data1 = pd.read_csv('./Data/' + classA + '.csv').iloc[:, 1:]
         data2 = pd.read_csv('./Data/' + classB + '.csv').iloc[:, 1:]
+        print("Data loaded for: " + classA)
+        print("\nData loaded for: " + classB)
 
 #---------------------------------------------------------------------------------------#
 
