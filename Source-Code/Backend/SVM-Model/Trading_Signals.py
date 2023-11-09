@@ -57,7 +57,7 @@ def smaClose(prices, window):
 
 # This next function finishes what the first function could not by using open prices
 
-def smaOPEN(prices, window):
+def smaOpen(prices, window):
     sma = prices.rolling(window).mean()[window-1:]
     return sma
 
@@ -65,9 +65,22 @@ def smaOPEN(prices, window):
 
 # Our next trading signal will be a Bollinger Band:
 
+# This is one of the most used algorithms in trading due to it's simplicity and effectiveness
+# We need 3 bands: an upper, lower, and middle band. The upper and lower bands are plotted
+# two standard deviations away from the average close price. Due to these deviations,
+# these two bands will hold over 80% of the price action, making anything that falls outside
+# this range very significant.
+
+# We want to buy when the the close prices reaches the lower band and sell when the close price
+# reaches the upper band.
+
+# def BB(data):
+
+ 
 #---------------------------------------------------------------------------------------#
 
 # Our next trading signal will be a Moving Average Convergence Divergence Indicator:
+
 
 #---------------------------------------------------------------------------------------#
 
