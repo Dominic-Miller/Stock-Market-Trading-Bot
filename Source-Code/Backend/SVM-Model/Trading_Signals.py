@@ -1,4 +1,5 @@
 # Takes in raw ticker data and creates the technical indicators to feed into Framework.py
+# Also models the residuals for the O_U file by creating new columns
 
 import pandas as pd
 import numpy as np
@@ -106,7 +107,7 @@ if (numClasses == 2):
 
     processed_data1.to_csv(classA + '_processed.csv')
     processed_data2.to_csv(classB + '_processed.csv')
-    
+
 elif (numClasses == 1):
     data1['sma'] = smaClose(data1['CLOSE'], range).pct_change()
 
@@ -115,3 +116,24 @@ elif (numClasses == 1):
     processed_data1.to_csv(classA + '_processed.csv')
 
 #---------------------------------------------------------------------------------------#
+
+# Finally, we will model our residuals using the O-U model and feed this into our O_U file
+
+# We want to create a new column in our data with the value either 0 or 1. The value will be 
+# 0 if spread of residuals is within our threshold and 1 if the spred exceeds our threshold.
+# We will use a threshold of 0.001 and spread of 10
+
+def create_list(): 
+    def addResiduals(spread):
+        min = spread[::-1].rolling(window = 10).min()[::-1]
+        min.iloc[-10:] = spread.iloc[-10:]
+
+        zero_or_one = (spread - min) > 0.001 # If outside threshold: 1
+        val = int(zero_or_one == True) # Convert our bool to either 0 or 1
+
+        return val
+    return create_list
+
+list = create_list()
+New_OU = OU(processed_data1, processed_data2)
+New_OU.split_slide(m_size=2000, e_size=100)
