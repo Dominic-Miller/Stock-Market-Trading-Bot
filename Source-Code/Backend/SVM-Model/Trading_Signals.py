@@ -9,7 +9,7 @@ import numpy as np
 
 import pickle
 
-# from O-U import O-U
+from O_U import OU
 
 #---------------------------------------------------------------------------------------#
 
@@ -42,6 +42,7 @@ while (numClasses < 1 or numClasses > 2):
 #---------------------------------------------------------------------------------------#
 
 # Our first trading signal will be a simple moving average:
+
 # We will need to create 2 different functions for this signal
 
 # This first function uses close prices calculated within a window range. Note: this will
@@ -61,4 +62,14 @@ def smaOPEN(prices, window):
     return sma
 
 #---------------------------------------------------------------------------------------#
+
+# Our next trading signal will be a Bollinger Band:
+
+#---------------------------------------------------------------------------------------#
+
+# Our next trading signal will be a Moving Average Convergence Divergence Indicator:
+
+#---------------------------------------------------------------------------------------#
+
+# Our next trading signal will be a Change of Character:
 
