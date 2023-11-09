@@ -1,4 +1,4 @@
-# Takes in raw ticker data and creates the technical indicators to feed into O-U.py
+# Takes in raw ticker data and creates the technical indicators to feed into Framework.py
 
 import pandas as pd
 import numpy as np
@@ -86,3 +86,32 @@ def smaOpen(prices, window):
 
 # Our next trading signal will be a Change of Character:
 
+
+#---------------------------------------------------------------------------------------#
+
+# Now all of our trading signals have been defined
+
+# We will next use all of these trading signals to modify our raw data to include
+# the necessary technical indicators that will be fed into O_U.py
+
+# Range will be our window size. We will set it to 10 for testing
+
+range = 10
+if (numClasses == 2):
+    data1['sma'] = smaClose(data1['CLOSE'], range).pct_change()
+    data2['sma'] = smaClose(data2['CLOSE'], range).pct_change()
+
+    processed_data1 = data1[range+1:].reset_index(drop=True)
+    processed_data2 = data2[range+1:].reset_index(drop=True)
+
+    processed_data1.to_csv(classA + '_processed.csv')
+    processed_data2.to_csv(classB + '_processed.csv')
+    
+elif (numClasses == 1):
+    data1['sma'] = smaClose(data1['CLOSE'], range).pct_change()
+
+    processed_data1 = data1[range+1:].reset_index(drop=True)
+
+    processed_data1.to_csv(classA + '_processed.csv')
+
+#---------------------------------------------------------------------------------------#
