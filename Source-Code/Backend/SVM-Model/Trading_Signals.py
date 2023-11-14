@@ -10,7 +10,7 @@ import numpy as np
 
 import pickle
 
-from O_U import OU
+#from O_U import OU
 
 #---------------------------------------------------------------------------------------#
 
@@ -24,17 +24,17 @@ while (numClasses < 1 or numClasses > 2):
     numClasses = int(input("Number of classes for this stock (1 or 2): "))
     if (numClasses == 1):
         classA = input("Ticker name for the stock: ")
-        data1 = pd.read_csv('./Data/' + classA + '.csv').iloc[:, 1:]
+        data1 = pd.read_csv('/Users/dominic/Desktop/CEN_Project/ML-Trading-Bot/Source-Code/Backend/Data/Dump/' + classA + '.csv').iloc[:, 1:]
         print("Data loaded for: " + classA)
         # Note: If only 1 class, we need another dataset to compare this class to for 
         # the SVM model to work properly
     elif (numClasses == 2):
         classA = input("Ticker name for the first class: ")
         classB = input("Ticker name for the second class: ")
-        data1 = pd.read_csv('./Data/' + classA + '.csv').iloc[:, 1:]
-        data2 = pd.read_csv('./Data/' + classB + '.csv').iloc[:, 1:]
+        data1 = pd.read_csv('/Users/dominic/Desktop/CEN_Project/ML-Trading-Bot/Source-Code/Backend/Data/Dump/' + classA + '.csv').iloc[:, 1:]
+        data2 = pd.read_csv('/Users/dominic/Desktop/CEN_Project/ML-Trading-Bot/Source-Code/Backend/Data/Dump/' + classB + '.csv').iloc[:, 1:]
         print("Data loaded for: " + classA)
-        print("\nData loaded for: " + classB)
+        print("Data loaded for: " + classB)
 
 #---------------------------------------------------------------------------------------#
 
