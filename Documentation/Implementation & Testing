@@ -4,45 +4,41 @@ Version 1.0
 Authors: Dominic Miller, Kian Haghighi, Edwin Laguerre, Ilya Kogan
 
 1. Programming Languages
-
-1. Python: We use Python almost exclusively for the backend of the project including the
+a) Python: We use Python almost exclusively for the backend of the project including the
   accessing of data and training of our trading bot. We chose Python since it has many
   built in libraries like Tensorflow, pandas, numpy, etc... and this works well with
   machine learning and data management.
-2. HTML: We used HTML to interact with and serve as a template to django allowing us to 
+b) HTML: We used HTML to interact with and serve as a template to django allowing us to 
   develop a webpage with the help of django's template engine. It uses templatesto display 
   market trends and allow users to interact with the trading bot through a web interface.
-3. Django: Used in combination with HTML in the frontend to create the user authentication
+c) Django: Used in combination with HTML in the frontend to create the user authentication
   and registration. Pairs well with HTML so was the obvious choice.
-4. CSS: We will use CSS and implement it into our HTML documents, to make the data shown more 
+d) CSS: We will use CSS and implement it into our HTML documents, to make the data shown more 
   presentable and help make the layout look better. It will create a more responsive web-design,
   improve readability for users while making it more visually appealing.
 
-
 2. Platforms, APIs, Databases, and other technologies used
-
-1. Tiingo: We used Tiingo (a financial markets API) to pull the 1-minute ticker data for our project
+a) Tiingo: We used Tiingo (a financial markets API) to pull the 1-minute ticker data for our project
   in the Get_Data.ipynb Jupyter Notebook in the backend source code.
 
-
-------------------------------------------------------------------------------------------------------
-                                      Increment 2-3
-------------------------------------------------------------------------------------------------------
-
 3. Execution-based Functional Testing
-Describe how/if you performed functional testing for your project (i.e., tested for the functional
-requirements listed in your RD).
-
--
+- To perform execution-based functional testing we used Visual Studio Code, Jupyter Notebook, 
+  and a terminal to test the inputs and outputs that were expected for each requirement. For example,
+  with the data API to test the functional requirements that this product must do, we tried a bunch
+  of different stock tickers and went through the data that was saved to the data dump folder to 
+  check if the data processed right and had any errors. If there were any errors, the data was 
+  discared and the stock will not be included in our final product.
 
 4. Execution-based Non-Functional Testing
-Describe how/if you performed non-functional testing for your project (i.e., tested for the non-
-functional requirements listed in your RD).
-
--
+- To perform execution-based non-functional testing we used a different approach from our functional
+  tests since it is not all about inputs and outputs. Non-functional testing is much more broad and 
+  could have many different interpretations for each requirement. To test for this, we kept track of 
+  all bugs and enhancements in the GitHub issues tab to make sure all non-functional requirements are
+  satisfied at a given time. If one appears to not be satisfied, then we will create a new issue
+  describing what needs to be changed in order for that requirement to be satisfied again.
 
 5. Non-Execution-based Testing
-Describe how/if you performed non-execution-based testing (such as code
-reviews/inspections/walkthroughs).
-
--
+- To perform non-execution-based testing, all code is carefully inspected and reviewed after any major 
+  changes and improvements to code with any dependencies. When developing each module within our code,
+  we would consistently go back and walkthrough the previous modules to make sure our program is scaling
+  together in a way such that it will eventually run as one program smoothly.
