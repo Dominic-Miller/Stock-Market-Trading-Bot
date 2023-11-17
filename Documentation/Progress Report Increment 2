@@ -57,8 +57,9 @@ e) the video or presentation
 - Dominic Miller: A) Wrote the majority of the progress report document including the project desription,
   data dump and trading signals accomplishments, data processing error, trading signals challenge, and 
   multiple data sets challenges and change of scope, and the plans for the next increment along with this 
-  part. B) C) D) E) Wrote the entirety of our backend source code including the data dump, get_data.py, and 
-  trading_signals.py python code files.
+  part. B) Determined and wrote two of the new functional requirements (data API and trading signals) in 
+  the requirements and design document. C) D) Wrote the entirety of our backend source code including the 
+  data dump, get_data.py, and trading_signals.py python code files. E) 
 
 - Kian Haghighi: A) B) C) D) E)
 
