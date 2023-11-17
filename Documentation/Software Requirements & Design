@@ -5,122 +5,116 @@ Authors: Dominic Miller, Kian Haghighi, Edwin Laguerre, Ilya Kogan
 
 
 1. Overview
-
-- The "Stock Market Trading Bot" is a web application designed to empower users with the ability to 
-create and manage personalized stock portfolios. Utilizing machine learning algorithms, the bot continually
-monitors one-minute stock price data, executing day trading strategies based on the assumption that stock prices
-will regress to their mean values when deviating significantly. Additionally, the system conducts simulations over
-the past year's data to provide users with insights into potential earnings. To implement this trading bot, we have
-developed a SVM Model (Support Vector Machine). SVM is a popular and effective machine learning algorithm for both 
-classification and regression. The idea of SVM is to construct a hyperplane   to seperate the two classes of data with 
-the gap being as wide as possible. Beyond portfolio management and algorithmic trading, the web application delivers 
-real-time market data and stock-related news. The project's motivation stems from the desire to simulate real-time 
-financial markets, offering users valuable insights into stock changes and visual representations of market fluctuations. 
-The automated trading capabilities save time and enable the implementation of intricate trading strategies. Operating 
-around the clock, the bot executes trades when users are unavailable and offers the ability to backtest trading strategies 
-with historical data while mitigating irrational trading decisions influenced by emotions. It will provide a clear and 
-intuitive dashboard that shows users the overview of the portfolio's performance, recent trades, and market trends 
-presenting data in an easily digestable form.
+-  The "Stock Market Trading Bot" is a web application designed to empower users with the ability to 
+   create and manage personalized stock portfolios. Utilizing machine learning algorithms, the bot continually
+   monitors one-minute stock price data, executing day trading strategies based on the assumption that stock prices
+   will regress to their mean values when deviating significantly. Additionally, the system conducts simulations over
+   the past year's data to provide users with insights into potential earnings. To implement this trading bot, we have
+   developed a SVM Model (Support Vector Machine). SVM is a popular and effective machine learning algorithm for both 
+   classification and regression. The idea of SVM is to construct a hyperplane   to seperate the two classes of data with 
+   the gap being as wide as possible. Beyond portfolio management and algorithmic trading, the web application delivers 
+   real-time market data and stock-related news. The project's motivation stems from the desire to simulate real-time 
+   financial markets, offering users valuable insights into stock changes and visual representations of market fluctuations. 
+   The automated trading capabilities save time and enable the implementation of intricate trading strategies. Operating 
+   around the clock, the bot executes trades when users are unavailable and offers the ability to backtest trading strategies 
+   with historical data while mitigating irrational trading decisions influenced by emotions. It will provide a clear and 
+   intuitive dashboard that shows users the overview of the portfolio's performance, recent trades, and market trends 
+   presenting data in an easily digestable form.
 
 
 2. Functional Requirements
-
-Low Priority:
-1. User Authentication
+* Low Priority:
+- 1. User Authentication
    - The system shall provide a user authentication mechanism to verify the identity of users accessing 
    the platform. This is of low priority as it is a fundamental security measure but not a core function 
    of the system.
-2. User Registration
+- 2. User Registration
    - The system shall allow new users to register by providing necessary personal information. This is also 
    of low priority as it's essential but not a primary function.
 
-Medium Priority:
-3. Real-Time Market Data
+ * Medium Priority:
+- 3. Real-Time Market Data
    - The system shall provide real-time market data, including stock prices, indices, and relevant financial 
    information. This is of medium priority, as it is crucial for the system's functionality but not the    
    primary focus.
-4. Data API
+- 4. Data API
    - The system shall allow a user to input a stock's ticker, and return the stock's data for each 1 minute
    increment over 2022 and automatically save it to the data dump folder. This is essential data to feed into
    the ML algorithm.
    
-High Priority:
-5. Portfolio Management
+* High Priority:
+- 5. Portfolio Management
    - The system shall allow users to create and manage investment portfolios, including adding and removing 
    assets, setting investment goals, and tracking performance. This is of high priority as it is a core 
    functionality of the system.
-6. Historical Data Analysis
+- 6. Historical Data Analysis
    - The system shall enable users to access and analyze historical market data, such as historical stock 
    prices and trends. This is also of high priority, as it supports decision-making and investment strategies 
    based on past performance.
-7. Trading Signals
+- 7. Trading Signals
    - The system shall automatically know when to buy and sell a stock based upon its prediction for divergence
    and convergence of its two classes. To do this, we have developed trading signals which let the bot know
    if it would be a good time to buy or sell the stock based on price and volume to predict future outcomes.
 
-- The prioritization is based on the criticality of the functions to the primary purpose of the system. User 
-authentication and registration, while important, are not the primary focus of the system and are therefore 
-low priority. Real-time market data is essential but secondary to the core functions of portfolio management 
-and historical data analysis, which are of high priority because they are central to the system's purpose.
+-  The prioritization is based on the criticality of the functions to the primary purpose of the system. User 
+   authentication and registration, while important, are not the primary focus of the system and are therefore 
+   low priority. Real-time market data is essential but secondary to the core functions of portfolio management 
+   and historical data analysis, which are of high priority because they are central to the system's purpose.
 
 
 3. Non-functional Requirements
-
-Non-Functional Requirements for the Stock Trading Bot:
-
-1. Security:
+- 1. Security:
    - The system shall implement robust security measures to protect user data, transactions, and sensitive 
    financial information. This is crucial to ensure the trust and safety of users' investments and personal data.
 
-2. Performance:
+- 2. Performance:
    - The system shall provide low-latency access to real-time market data to ensure timely and accurate trading 
    decisions. High-performance trading execution is essential in the stock market.
 
-3. Reliability:
+- 3. Reliability:
    - The system shall maintain a high level of availability with minimal downtime to ensure that users can access 
    and use the platform consistently. Reliability is critical in the stock trading environment.
 
-4. Scalability:
+- 4. Scalability:
    - The system shall be designed to scale efficiently to accommodate a growing user base and increasing data volumes. 
    Scalability is important to handle increased demand.
 
-5. Compliance:
+- 5. Compliance:
    - The system shall comply with relevant financial regulations and industry standards, ensuring that all transactions 
    and activities adhere to legal requirements. Compliance is essential to avoid legal issues and protect users.
 
-6. User Experience (UX):
+- 6. User Experience (UX):
    - The system shall provide an intuitive and user-friendly interface for traders, offering ease of use and efficient 
    navigation. A positive user experience is crucial to attract and retain users.
 
-7. Error Handling:
+- 7. Error Handling:
    - The system shall have robust error-handling mechanisms to prevent trading errors, data inconsistencies, and system 
    failures. Proper error handling ensures the system's stability.
 
-8. Data Accuracy:
+- 8. Data Accuracy:
    - The system shall ensure the accuracy and integrity of all market data and transaction records. Reliable data is 
    critical for making informed investment decisions.
 
-9. Software Quality:
+- 9. Software Quality:
    - The system shall adhere to industry best practices for software development, including code quality, testing, 
    and maintainability. High-quality software reduces the likelihood of bugs and enhances long-term sustainability.
 
-10. Data Privacy:
+- 10. Data Privacy:
     - The system shall protect user privacy by implementing data encryption, user consent mechanisms, and adherence to 
    privacy laws. Maintaining data privacy is vital for user trust and regulatory compliance.
 
-11. Disaster Recovery:
+- 11. Disaster Recovery:
     - The system shall have a disaster recovery plan in place to ensure data backup, redundancy, and a quick recovery 
    in case of system failures or disasters. This is essential to minimize downtime and data loss.
 
 
-- Rationale: These non-functional requirements are essential for the stock trading bot to provide a secure, 
-reliable, and efficient trading platform. Each requirement is derived from industry standards and practices 
-to ensure the system's success and user satisfaction. The specific nature of these requirements 
-is critical for the successful operation of a stock trading bot and to meet the needs and expectations of traders.
+-  Rationale: These non-functional requirements are essential for the stock trading bot to provide a secure, 
+   reliable, and efficient trading platform. Each requirement is derived from industry standards and practices 
+   to ensure the system's success and user satisfaction. The specific nature of these requirements 
+   is critical for the successful operation of a stock trading bot and to meet the needs and expectations of traders.
 
 
 4. Use Case Diagram
-
 This section presents the use case diagram and the textual descriptions of the use cases for
 the system under development. The use case diagram should contain all the use cases and
 relationships between them needed to describe the functionality to be developed. If you discover
@@ -131,7 +125,6 @@ system are required for the second and third iterations.
 
 
 5. Class Diagram and/or Sequence Diagrams
-
 This section presents a high-level overview of the anticipated system architecture using a class
 diagram and/or sequence diagrams.
 If the main paradigm used in your project is Object Oriented (i.e., you have classes or
@@ -154,39 +147,37 @@ Sequence diagrams describe how and in what order the objects in a system functio
 
 
 6. Operating Environment
-
-- The software will operate on standard hardware platforms running compatible operating systems, such as Windows 10, 
-macOS 12, and Linux Ubuntu 20.04. It must peacefully coexist with other software components and applications commonly
-found on these platforms, including web browsers, database management systems, and security software.
+-  The software will operate on standard hardware platforms running compatible operating systems, such as Windows 10, 
+   macOS 12, and Linux Ubuntu 20.04. It must peacefully coexist with other software components and applications commonly
+   found on these platforms, including web browsers, database management systems, and security software.
 
 
 7. Assumptions and Dependencies
-
-1. Market Data Providers: The project assumes that reliable third-party market data providers will be 
+- 1. Market Data Providers: The project assumes that reliable third-party market data providers will be 
    available to source real-time and historical market data. Any issues with these data providers, including 
    data accuracy and availability, could affect the functionality of the system.
 
-2. Data Privacy Regulations: It is assumed that the project complies with existing data privacy regulations. 
+- 2. Data Privacy Regulations: It is assumed that the project complies with existing data privacy regulations. 
    Changes in data privacy laws or regulations may necessitate updates to the system to ensure continued compliance.
 
-3. Internet Connectivity: The system relies on stable internet connectivity for users to access real-time market data 
+- 3. Internet Connectivity: The system relies on stable internet connectivity for users to access real-time market data 
    and execute trades. Any disruptions in internet connectivity may affect the user experience.
 
-4. Third-Party APIs: The project may depend on third-party APIs for various functionalities, such as payment processing, 
+- 4. Third-Party APIs: The project may depend on third-party APIs for various functionalities, such as payment processing, 
    news feeds, or communication with stock exchanges. Assumptions about the reliability and continued support of these 
    APIs could impact the system's performance and functionality.
 
-6. Infrastructure Scalability: Assumptions about the scalability of the underlying infrastructure need to hold true. Any 
+- 5. Infrastructure Scalability: Assumptions about the scalability of the underlying infrastructure need to hold true. Any 
    limitations in scalability could affect the system's ability to handle a growing user base.
 
-8. Financial Market Volatility: The project assumes that the stock market will continue to operate in a reasonably stable
+- 6. Financial Market Volatility: The project assumes that the stock market will continue to operate in a reasonably stable
    manner. Unexpected market volatility can significantly impact the performance and behavior of the trading bot.
 
-9. Legal and Regulatory Changes: Assumptions about the stability of financial regulations need to hold true. Changes in 
+- 7. Legal and Regulatory Changes: Assumptions about the stability of financial regulations need to hold true. Changes in 
    regulations or unexpected legal issues could require modifications to the system to ensure compliance.
 
-10. User Adoption: The success of the project assumes that users will adopt the trading bot as expected. If user adoption 
+- 8. User Adoption: The success of the project assumes that users will adopt the trading bot as expected. If user adoption 
    rates are significantly different from what was anticipated, it could affect the system's scalability and resource requirements.
 
-11. Integration with Brokerage Accounts: If the project intends to integrate with external brokerage accounts, it assumes 
+- 9. Integration with Brokerage Accounts: If the project intends to integrate with external brokerage accounts, it assumes 
    that these integrations will be technically feasible and that the brokerage firms will support such integrations.
