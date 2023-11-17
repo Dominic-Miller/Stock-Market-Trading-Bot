@@ -3,14 +3,14 @@
 
 import pandas as pd
 import numpy as np
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 
-# from sklearn import preprocessing
-# from sklearn.model_selection import TimeSeriesSplit
+from sklearn import preprocessing
+from sklearn.model_selection import TimeSeriesSplit
 
 import pickle
 
-#from O_U import OU
+from O_U import OU
 
 #---------------------------------------------------------------------------------------#
 
@@ -42,24 +42,15 @@ while (numClasses < 1 or numClasses > 2):
 
 #---------------------------------------------------------------------------------------#
 
-# Our first trading signal will be a simple moving average:
+# Our first trading signal will be a Simple Moving Average:
 
-# We will need to create 2 different functions for this signal
+# This function uses close prices calculated within a window range. We will then
+# keep track of the moving average and return this value
 
-# This first function uses close prices calculated within a window range. Note: this will
-# not use the current period's data since we will only have that once we reach the end of 
-# the minute and by then we will be in the next window
-
-def smaClose(prices, window):
-    sma = prices.rolling(window).mean()[window-1:]
+def sma(price_data, window):
+    sma = price_data.rolling(window).mean()[window - 1:]
     sma.index += 1
     sma = sma[:-1]
-    return sma
-
-# This next function finishes what the first function could not by using open prices
-
-def smaOpen(prices, window):
-    sma = prices.rolling(window).mean()[window-1:]
     return sma
 
 #---------------------------------------------------------------------------------------#
@@ -75,18 +66,62 @@ def smaOpen(prices, window):
 # We want to buy when the the close prices reaches the lower band and sell when the close price
 # reaches the upper band.
 
-# def BB(data):
+def BB(data):
+    
+    return data
 
  
 #---------------------------------------------------------------------------------------#
 
 # Our next trading signal will be a Moving Average Convergence Divergence Indicator:
 
+def MACD(data):
+
+    return data
 
 #---------------------------------------------------------------------------------------#
 
 # Our next trading signal will be a Change of Character:
 
+def CC(data):
+
+    return data
+
+#---------------------------------------------------------------------------------------#
+
+# Our final trading signal will be a Money Flow Index:
+
+# We must use some sort of trading signal which tracks the volume across our data classes.
+
+# This function will look at the Money Flow Index for a certain index and compare it to 
+# that of the index behind it. This function is fairly simple and tracks volume along
+# with the close prices when available.
+
+def mfi(data, window):
+    money_flow = (data['HIGH'] + data['LOW'] + data['CLOSE']) / 3
+    positives = [0, 0]
+    negatives = [0, 0]
+    i = 1
+
+    while i < data.len() - 1:
+        if money_flow[i] > money_flow[i - 1]:
+            positives.append(money_flow[i] * data.loc[i, 'VOLUME'])
+            negatives.append(0)
+        else:
+            positives.append(0)
+            negatives.append(money_flow[i] * data.loc[i, 'VOLUME'])
+        i += 1
+
+    positives = pd.Series(positives)
+    negatives = pd.Series(negatives)
+
+    positive_sum = pd.Series(positives.rolling(window).sum())
+    negative_sum = pd.Series(negatives.rolling(window).sum())
+    
+    mfi = (window - positive_sum) / (window - negative_sum)
+    mfi = abs(100 - (100 / (1 + mfi)))
+
+    return mfi[window:]
 
 #---------------------------------------------------------------------------------------#
 
@@ -99,8 +134,20 @@ def smaOpen(prices, window):
 
 range = 10
 if (numClasses == 2):
-    data1['sma'] = smaClose(data1['CLOSE'], range).pct_change()
-    data2['sma'] = smaClose(data2['CLOSE'], range).pct_change()
+    data1['sma'] = sma(data1['CLOSE'], range).pct_change()
+    data2['sma'] = sma(data2['CLOSE'], range).pct_change()
+
+    data1['BB'] = BB(data1).pct_change()
+    data2['BB'] = BB(data2).pct_change()
+
+    data1['MACD'] = MACD(data1).pct_change()
+    data2['MACD'] = MACD(data2).pct_change()
+
+    data1['CC'] = CC(data1).pct_change()
+    data2['CC'] = CC(data2).pct_change()
+
+    data1['mfi'] = mfi(data1, range).pct_change()
+    data2['mfi'] = mfi(data2, range).pct_change()
 
     processed_data1 = data1[range+1:].reset_index(drop=True)
     processed_data2 = data2[range+1:].reset_index(drop=True)
@@ -109,7 +156,7 @@ if (numClasses == 2):
     processed_data2.to_csv(classB + '_processed.csv')
 
 elif (numClasses == 1):
-    data1['sma'] = smaClose(data1['CLOSE'], range).pct_change()
+    data1['sma'] = sma(data1['CLOSE'], range).pct_change()
 
     processed_data1 = data1[range+1:].reset_index(drop=True)
 
@@ -136,4 +183,5 @@ def create_list():
 
 list = create_list()
 New_OU = OU(processed_data1, processed_data2)
-New_OU.split_slide(m_size=2000, e_size=100)
+New_OU.split_slide(m_size = 2000, e_size = 100)
+
