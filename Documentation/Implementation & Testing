@@ -4,21 +4,21 @@ Version 1.0
 Authors: Dominic Miller, Kian Haghighi, Edwin Laguerre, Ilya Kogan
 
 1. Programming Languages
-a) Python: We use Python almost exclusively for the backend of the project including the
+- 1. Python: We use Python almost exclusively for the backend of the project including the
   accessing of data and training of our trading bot. We chose Python since it has many
   built in libraries like Tensorflow, pandas, numpy, etc... and this works well with
   machine learning and data management.
-b) HTML: We used HTML to interact with and serve as a template to django allowing us to 
+- 2. HTML: We used HTML to interact with and serve as a template to django allowing us to 
   develop a webpage with the help of django's template engine. It uses templatesto display 
   market trends and allow users to interact with the trading bot through a web interface.
-c) Django: Used in combination with HTML in the frontend to create the user authentication
+- 3. Django: Used in combination with HTML in the frontend to create the user authentication
   and registration. Pairs well with HTML so was the obvious choice.
-d) CSS: We will use CSS and implement it into our HTML documents, to make the data shown more 
+- 4. CSS: We will use CSS and implement it into our HTML documents, to make the data shown more 
   presentable and help make the layout look better. It will create a more responsive web-design,
   improve readability for users while making it more visually appealing.
 
 2. Platforms, APIs, Databases, and other technologies used
-a) Tiingo: We used Tiingo (a financial markets API) to pull the 1-minute ticker data for our project
+- 1. Tiingo: We used Tiingo (a financial markets API) to pull the 1-minute ticker data for our project
   in the Get_Data.ipynb Jupyter Notebook in the backend source code.
 
 3. Execution-based Functional Testing
