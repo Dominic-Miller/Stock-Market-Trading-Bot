@@ -3,7 +3,10 @@ Progress Report
 Group #14
 
 1) Team Members
-Please write the name of all the team members, their FSU IDs, and GitHub IDs here.
+- Kian Haghighi (FSU ID: kh21e, GitHub ID: KianHaghighi)
+- Dominic Miller (FSU ID: dgm21, Github ID: Dominic-Miller)
+- Edwin Laguerre (FSU ID: el21l, Github ID: Edwinlaguerre)
+- Ilya Kogan (FSU ID: ik22g, Github ID: kogan782)
 
 2) Project Title and Description
 - Stock Market Trading Bot
@@ -15,16 +18,30 @@ Please write the name of all the team members, their FSU IDs, and GitHub IDs her
   have looked like.
 
 3) Accomplishments and overall project status during this increment
-Describe in detail what was accomplished during this increment and where your project stands
-overall compared to the initial scope and functionality proposed.
+- 1. Data Dump: In this increment, all of the necessary data that will be needed to train the 
+  bot was retrieved and has been placed into a new data dump folder in the backend code. We
+  will use this data for stocks with multiple classes to compare the ticker data to one another
+  to predict divergence and convergence in our model.
+- 2. Trading Signals: The trading signals were developed alone with the processed data including
+  price residuals and buy/sell indicators. This will allow our bot to predict to either buy or 
+  sell the stock, then we will tell the ML algorithm if it is correct so it can adjust it's 
+  biases and future predictions. This is a very big step in the process of training our bot.
 
 4) Challenges, changes in the plan and scope of the project and things that went wrong during this
 increment
-Please describe here in detail:
-- anything that was challenging during this increment and how you dealt with the challenges
-- any changes that occurred in the initial plan you had for the project or its scope. Describe the
-reasons for the changes.
-- anything that went wrong during this increment
+- 1. Data processing error: Still stuggling with an error where I can only run the data on my own computer.
+  Right now, the file path is set to my computer's path where the file is stored, however when other users
+  run this program we want to make it ambiguous so the path can be accessed by anyone.
+- 2. Developing trading signals: This was a difficult process in this increment. After figuring out we 
+  would need two separate data sets, we needed to develop some trading signals to train the bot with.
+  These would be used to predict the convergence or divergence of the two classes. By implementing these,
+  we will be able to train our bot effeciently based on many factors such as price and volume.
+- 3. SVM model requires two data sets: This is the largest change from our original plan on the backend.
+  Originally, we thought we would be able to train the bot to predict prices for any stock, however many
+  algorithms used by hedge funds already do this so the methods are not effective. Rather, we have to 
+  use two separate data sets to compare to one another and predict convergence or divergence. After reading
+  more about the algorithms hedge funds use, it became obvious that we would only be able to use stocks that
+  have two classes to begin with since we will easily be able to predict convergence and divergence this way.
 
 5) Team Member Contribution for this increment
 Please list each individual member and their contributions to each of the deliverables in this
@@ -35,11 +52,27 @@ b) the requirements and design document, including the sections they wrote or co
 c) the implementation and testing document, including the sections they wrote or contributed to
 d) the source code (be detailed about which parts of the system each team member contributed to
 and how)
+
 e) the video or presentation
+- Dominic Miller: A) Wrote the majority of the progress report document including the project desription,
+  data dump and trading signals accomplishments, data processing error, trading signals challenge, and 
+  multiple data sets challenges and change of scope, and the plans for the next increment along with this 
+  part. B) C) D) E) Wrote the entirety of our backend source code including the data dump, get_data.py, and 
+  trading_signals.py python code files.
+
+- Kian Haghighi: A) B) C) D) E)
+
+- Edwin Laguerre: A) B) C) D) E)
+
+- Ilya Kogan: A) B) C) D) E)
 
 6) Plans for the next increment
-If this report if for the first or second increment, describe what are you planning to achieve in the
-next increment.
+- Since the next increment is our last, we plan to fully finish the bot by developing the OU model and
+  framework to train the ML algorithm. On the front end, we still need to finish creating our web application
+  and finally connect the backend to the front end so the application will run smoothly. Any time a user 
+  picks out some stocks for their portfolio, they will be promted to buy a certain amount of each stock
+  and then the algorithm will run and display a graph of the profits from the bot vs. the profits without
+  the bot.
 
 7) Link to video
-Paste here the link to your video.
+
