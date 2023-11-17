@@ -58,8 +58,11 @@ e) the video or presentation
   data dump and trading signals accomplishments, data processing error, trading signals challenge, and 
   multiple data sets challenges and change of scope, and the plans for the next increment along with this 
   part. B) Determined and wrote two of the new functional requirements (data API and trading signals) in 
-  the requirements and design document. C) D) Wrote the entirety of our backend source code including the 
-  data dump, get_data.py, and trading_signals.py python code files. E) 
+  the requirements and design document. C) Wrote the entirety of edits to the implementation and testing
+  document since the last increment along with the new parts included for increment 2 including the 
+  execution-based functional testing, execution-based non-functional testing, and non-executional-based 
+  testing parts. D) Wrote the entirety of our backend source code including the data dump, get_data.py, 
+  and trading_signals.py python code files. E) 
 
 - Kian Haghighi: A) B) C) D) E)
 
