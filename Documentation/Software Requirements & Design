@@ -39,16 +39,24 @@ Medium Priority:
    - The system shall provide real-time market data, including stock prices, indices, and relevant financial 
    information. This is of medium priority, as it is crucial for the system's functionality but not the    
    primary focus.
+4. Data API
+   - The system shall allow a user to input a stock's ticker, and return the stock's data for each 1 minute
+   increment over 2022 and automatically save it to the data dump folder. This is essential data to feed into
+   the ML algorithm.
    
 High Priority:
-4. Portfolio Management
+5. Portfolio Management
    - The system shall allow users to create and manage investment portfolios, including adding and removing 
    assets, setting investment goals, and tracking performance. This is of high priority as it is a core 
    functionality of the system.
-5. Historical Data Analysis
+6. Historical Data Analysis
    - The system shall enable users to access and analyze historical market data, such as historical stock 
    prices and trends. This is also of high priority, as it supports decision-making and investment strategies 
    based on past performance.
+7. Trading Signals
+   - The system shall automatically know when to buy and sell a stock based upon its prediction for divergence
+   and convergence of its two classes. To do this, we have developed trading signals which let the bot know
+   if it would be a good time to buy or sell the stock based on price and volume to predict future outcomes.
 
 - The prioritization is based on the criticality of the functions to the primary purpose of the system. User 
 authentication and registration, while important, are not the primary focus of the system and are therefore 
@@ -110,11 +118,9 @@ reliable, and efficient trading platform. Each requirement is derived from indus
 to ensure the system's success and user satisfaction. The specific nature of these requirements 
 is critical for the successful operation of a stock trading bot and to meet the needs and expectations of traders.
 
-------------------------------------------------------------------------------------------------------
-                                      Increment 2-3
-------------------------------------------------------------------------------------------------------
 
 4. Use Case Diagram
+
 This section presents the use case diagram and the textual descriptions of the use cases for
 the system under development. The use case diagram should contain all the use cases and
 relationships between them needed to describe the functionality to be developed. If you discover
@@ -125,6 +131,7 @@ system are required for the second and third iterations.
 
 
 5. Class Diagram and/or Sequence Diagrams
+
 This section presents a high-level overview of the anticipated system architecture using a class
 diagram and/or sequence diagrams.
 If the main paradigm used in your project is Object Oriented (i.e., you have classes or
