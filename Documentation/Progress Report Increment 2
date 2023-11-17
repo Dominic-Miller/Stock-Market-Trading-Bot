@@ -44,16 +44,6 @@ increment
   have two classes to begin with since we will easily be able to predict convergence and divergence this way.
 
 5) Team Member Contribution for this increment
-Please list each individual member and their contributions to each of the deliverables in this
-increment (be as detailed as possible). In other words, describe the contribution of each team
-member to:
-a) the progress report, including the sections they wrote or contributed to
-b) the requirements and design document, including the sections they wrote or contributed to
-c) the implementation and testing document, including the sections they wrote or contributed to
-d) the source code (be detailed about which parts of the system each team member contributed to
-and how)
-
-e) the video or presentation
 - Dominic Miller: A) Wrote the majority of the progress report document including the project desription,
   data dump and trading signals accomplishments, data processing error, trading signals challenge, and 
   multiple data sets challenges and change of scope, and the plans for the next increment along with this 
