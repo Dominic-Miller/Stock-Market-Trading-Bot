@@ -157,7 +157,7 @@ Sequence diagrams describe how and in what order the objects in a system functio
 
 - The software will operate on standard hardware platforms running compatible operating systems, such as Windows 10, 
 macOS 12, and Linux Ubuntu 20.04. It must peacefully coexist with other software components and applications commonly
-found on these platforms, including web browsers, database management systems, and security software 
+found on these platforms, including web browsers, database management systems, and security software.
 
 
 7. Assumptions and Dependencies
@@ -184,7 +184,6 @@ found on these platforms, including web browsers, database management systems, a
 
 9. Legal and Regulatory Changes: Assumptions about the stability of financial regulations need to hold true. Changes in 
    regulations or unexpected legal issues could require modifications to the system to ensure compliance.
-
 
 10. User Adoption: The success of the project assumes that users will adopt the trading bot as expected. If user adoption 
    rates are significantly different from what was anticipated, it could affect the system's scalability and resource requirements.
