@@ -3,14 +3,14 @@
 
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 
-from sklearn import preprocessing
-from sklearn.model_selection import TimeSeriesSplit
+#from sklearn import preprocessing
+#from sklearn.model_selection import TimeSeriesSplit
 
 import pickle
 
-from O_U import OU
+#from O_U import OU
 
 #---------------------------------------------------------------------------------------#
 
@@ -24,15 +24,15 @@ while (numClasses < 1 or numClasses > 2):
     numClasses = int(input("Number of classes for this stock (1 or 2): "))
     if (numClasses == 1):
         classA = input("Ticker name for the stock: ")
-        data1 = pd.read_csv('/Users/dominic/Desktop/CEN_Project/ML-Trading-Bot/Source-Code/Backend/Data/Dump/' + classA + '.csv').iloc[:, 1:]
+        data1 = pd.read_csv('/Users/dominic/Desktop/ML-Trading-Bot/Source-Code/Backend/Data/Dump/' + classA + '.csv').iloc[:, 1:]
         print("Data loaded for: " + classA)
         # Note: If only 1 class, we need another dataset to compare this class to for 
         # the SVM model to work properly
     elif (numClasses == 2):
         classA = input("Ticker name for the first class: ")
         classB = input("Ticker name for the second class: ")
-        data1 = pd.read_csv('/Users/dominic/Desktop/CEN_Project/ML-Trading-Bot/Source-Code/Backend/Data/Dump/' + classA + '.csv').iloc[:, 1:]
-        data2 = pd.read_csv('/Users/dominic/Desktop/CEN_Project/ML-Trading-Bot/Source-Code/Backend/Data/Dump/' + classB + '.csv').iloc[:, 1:]
+        data1 = pd.read_csv('/Users/dominic/Desktop/ML-Trading-Bot/Source-Code/Backend/Data/Dump/' + classA + '.csv').iloc[:, 1:]
+        data2 = pd.read_csv('/Users/dominic/Desktop/ML-Trading-Bot/Source-Code/Backend/Data/Dump/' + classB + '.csv').iloc[:, 1:]
         print("Data loaded for: " + classA)
         print("Data loaded for: " + classB)
 
@@ -137,17 +137,17 @@ if (numClasses == 2):
     data1['sma'] = sma(data1['CLOSE'], range).pct_change()
     data2['sma'] = sma(data2['CLOSE'], range).pct_change()
 
-    data1['BB'] = BB(data1).pct_change()
-    data2['BB'] = BB(data2).pct_change()
+    #data1['BB'] = BB(data1).pct_change()
+    #data2['BB'] = BB(data2).pct_change()
 
-    data1['MACD'] = MACD(data1).pct_change()
-    data2['MACD'] = MACD(data2).pct_change()
+    #data1['MACD'] = MACD(data1).pct_change()
+    #data2['MACD'] = MACD(data2).pct_change()
 
-    data1['CC'] = CC(data1).pct_change()
-    data2['CC'] = CC(data2).pct_change()
+    #data1['CC'] = CC(data1).pct_change()
+    #data2['CC'] = CC(data2).pct_change()
 
-    data1['mfi'] = mfi(data1, range).pct_change()
-    data2['mfi'] = mfi(data2, range).pct_change()
+    #data1['mfi'] = mfi(data1, range).pct_change()
+    #data2['mfi'] = mfi(data2, range).pct_change()
 
     processed_data1 = data1[range+1:].reset_index(drop=True)
     processed_data2 = data2[range+1:].reset_index(drop=True)
