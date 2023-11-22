@@ -20,6 +20,8 @@ Authors: Dominic Miller, Kian Haghighi, Edwin Laguerre, Ilya Kogan
 2. Platforms, APIs, Databases, and other technologies used
 - 1. Tiingo: We used Tiingo (a financial markets API) to pull the 1-minute ticker data for our project
   in the Get_Data.ipynb Jupyter Notebook in the backend source code.
+-2.Django: We used Django to create our front-end and the MVC architecture that comes with it.
+-3.Sqlite: We used Sqlite to store the users in our database.
 
 3. Execution-based Functional Testing
 - To perform execution-based functional testing we used Visual Studio Code, Jupyter Notebook, 
