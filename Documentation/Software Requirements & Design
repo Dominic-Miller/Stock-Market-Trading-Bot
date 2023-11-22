@@ -31,6 +31,9 @@ Authors: Dominic Miller, Kian Haghighi, Edwin Laguerre, Ilya Kogan
 - 2. User Registration
    - The system shall allow new users to register by providing necessary personal information. This is also 
    of low priority as it's essential but not a primary function.
+-3. Profile page view
+-The system should allow users to see the quantitive data in their portfolio as well as important profile info such as
+contact email, phone number, etc.
 
  * Medium Priority:
 - 3. Real-Time Market Data
