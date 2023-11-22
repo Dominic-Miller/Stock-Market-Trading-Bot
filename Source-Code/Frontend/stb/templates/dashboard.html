@@ -1,0 +1,29 @@
+<!-- FILEPATH: /c:/Users/kianh/ML-Trading-Bot-2/templates/dashboard.html -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>User Authentication and Registration Dashboard</title>
+    </head>
+    <body>
+        <h1>User Authentication and Registration Dashboard</h1>
+        <h2>Login</h2>
+        <form action="/login" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username"><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password"><br><br>
+            <input type="submit" value="Login">
+        </form>
+        <h2>Register</h2>
+        <form action="/register" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username"><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password"><br><br>
+            <label for="confirm_password">Confirm Password:</label>
+            <input type="password" id="confirm_password" name="confirm_password"><br><br>
+            <input type="submit" value="Register">
+        </form>
+    </body>
+</html>
