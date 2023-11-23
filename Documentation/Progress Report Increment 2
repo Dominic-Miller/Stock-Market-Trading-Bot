@@ -26,9 +26,9 @@ Group #14
   price residuals and buy/sell indicators. This will allow our bot to predict to either buy or 
   sell the stock, then we will tell the ML algorithm if it is correct so it can adjust it's 
   biases and future predictions. This is a very big step in the process of training our bot.
--3. User authentication and registration: Users can know register themselves as users as well as login. Users can
-also see the amount of money that is currently in their profile.
--4. Profile Page: Users can see how much money is in their account and how much the funds in their account have changed.
+- 3. User authentication and registration: Users can know register themselves as users as well as login. Users can
+  also see the amount of money that is currently in their profile.
+- 4. Profile Page: Users can see how much money is in their account and how much the funds in their account have changed.
 
 4) Challenges, changes in the plan and scope of the project and things that went wrong during this
 increment
@@ -55,24 +55,24 @@ increment
   of edits to the implementation and testing document since the last increment along with the new parts 
   included for increment 2 including the execution-based functional testing, execution-based non-functional 
   testing, and non-executional-based testing parts. D) Wrote the entirety of our backend source code 
-  including the data dump, get_data.py, and trading_signals.py python code files. E) 
+  including the data dump, get_data.py, and trading_signals.py python code files. E) Did the intro and 
+  overview of the current project in our increment's video. Also discussed the state of the backend,
+  what was accomplished on the backend, a demo of the backend, our changes of scope, and what we plan
+  to accomplish in the next increment on the backend.
 
-- Kian Haghighi: 
-A)  Wrote about the improvements to the front-end, including user authentication and registration and profile page
-B)  Added the profile page functional requirement as well as edited the user authentication and user authorization
-functional requirement.
-C) Added Django and Sqlite to the "2. Platforms, APIs, Databases, and other technologies used" section along with the
-various descriptions
-D) Wrote all of the code for the user authentication and registration in the front-end
-source code with Django. Wrote the code for the profile page.
-E) Created the section of the video that describes the code added for user authentication
-and registration and profile view and show the functionality.
+- Kian Haghighi: A) Wrote about the improvements to the front-end, including user authentication and 
+  registration and profile page B) Added the profile page functional requirement as well as edited the 
+  user authentication and user authorization functional requirement. C) Added Django and Sqlite to the 
+  "2. Platforms, APIs, Databases, and other technologies used" section along with the various descriptions
+  D) Wrote all of the code for the user authentication and registration in the front-end source code with 
+  Django. Wrote the code for the profile page. E) Created the section of the video that describes the code
+  added for user authentication and registration and profile view and show the functionality.
 
-- Edwin Laguerre: A) Did not write much of the progress report besides the team contribution section 
-B) Did not write much of the design document for this increment 
-C)  Did not write anything in the implementation and testing document since I have yet to implement any code as I have spent my time familiarizing myself with Python and the code we already have
-D) As stated above, have not written any of the source code yet and have been familiarizing myself with what we have 
-E) 
+- Edwin Laguerre: A) Did not write much of the progress report besides the team contribution section. B) Did 
+  not write much of the design document for this increment. C) Did not write anything in the implementation 
+  and testing document since I have yet to implement any code as I have spent my time familiarizing myself 
+  with Python and the code we already have. D) As stated above, have not written any of the source code yet 
+  and have been familiarizing myself with what we have. E) Talked about the plans for the backend in the video.
 
 - Ilya Kogan: A) B) C) D) E)
 
