@@ -26,9 +26,11 @@ Group #14
   price residuals and buy/sell indicators. This will allow our bot to predict to either buy or 
   sell the stock, then we will tell the ML algorithm if it is correct so it can adjust it's 
   biases and future predictions. This is a very big step in the process of training our bot.
-- 3. User authentication and registration: Users can know register themselves as users as well as login. Users can
+- 3. User authentication and registration: Users can know register themselves as users as well 
+  as login. Users can
   also see the amount of money that is currently in their profile.
-- 4. Profile Page: Users can see how much money is in their account and how much the funds in their account have changed.
+- 4. Profile Page: Users can see how much money is in their account and how much the funds in 
+  their account have changed.
 
 4) Challenges, changes in the plan and scope of the project and things that went wrong during this
 increment
