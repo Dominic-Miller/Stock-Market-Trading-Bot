@@ -21,7 +21,6 @@ Authors: Dominic Miller, Kian Haghighi, Edwin Laguerre, Ilya Kogan
    intuitive dashboard that shows users the overview of the portfolio's performance, recent trades, and market trends 
    presenting data in an easily digestable form.
 
-
 2. Functional Requirements
 * Low Priority:
 - 1. User Authentication
@@ -31,11 +30,11 @@ Authors: Dominic Miller, Kian Haghighi, Edwin Laguerre, Ilya Kogan
 - 2. User Registration
    - The system shall allow new users to register by providing necessary personal information. This is also 
    of low priority as it's essential but not a primary function.
--3. Profile page view
--The system should allow users to see the quantitive data in their portfolio as well as important profile info such as
-contact email, phone number, etc.
+- 3. Profile page view
+   - The system should allow users to see the quantitive data in their portfolio as well as important profile info such as
+   contact email, phone number, etc.
 
- * Medium Priority:
+* Medium Priority:
 - 3. Real-Time Market Data
    - The system shall provide real-time market data, including stock prices, indices, and relevant financial 
    information. This is of medium priority, as it is crucial for the system's functionality but not the    
@@ -63,7 +62,6 @@ contact email, phone number, etc.
    authentication and registration, while important, are not the primary focus of the system and are therefore 
    low priority. Real-time market data is essential but secondary to the core functions of portfolio management 
    and historical data analysis, which are of high priority because they are central to the system's purpose.
-
 
 3. Non-functional Requirements
 - 1. Security:
@@ -116,7 +114,6 @@ contact email, phone number, etc.
    to ensure the system's success and user satisfaction. The specific nature of these requirements 
    is critical for the successful operation of a stock trading bot and to meet the needs and expectations of traders.
 
-
 4. Use Case Diagram
 This section presents the use case diagram and the textual descriptions of the use cases for
 the system under development. The use case diagram should contain all the use cases and
@@ -125,7 +122,6 @@ new use cases between two increments, update the diagram for your future increme
 Textual descriptions of use cases: For the first increment, the textual descriptions for the use
 cases are not required. However, the textual descriptions for all use cases discovered for your
 system are required for the second and third iterations.
-
 
 5. Class Diagram and/or Sequence Diagrams
 This section presents a high-level overview of the anticipated system architecture using a class
@@ -148,12 +144,10 @@ A Sequence Diagram simply depicts interaction between objects (or functions - in
 for non-OOP systems) in a sequential order, i.e. the order in which these interactions take place.
 Sequence diagrams describe how and in what order the objects in a system function.
 
-
 6. Operating Environment
 -  The software will operate on standard hardware platforms running compatible operating systems, such as Windows 10, 
    macOS 12, and Linux Ubuntu 20.04. It must peacefully coexist with other software components and applications commonly
    found on these platforms, including web browsers, database management systems, and security software.
-
 
 7. Assumptions and Dependencies
 - 1. Market Data Providers: The project assumes that reliable third-party market data providers will be 
