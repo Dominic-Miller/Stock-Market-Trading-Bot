@@ -78,7 +78,7 @@ increment
   with Python and the code we already have. D) As stated above, have not written any of the source code yet 
   and have been familiarizing myself with what we have. E) Talked about the plans for the backend in the video.
 
-- Ilya Kogan: A) Talked a bit about implementing CSS into HTML to make it more visually appealing for the 
+- Ilya Kogan: A) Talked about the implemention of CSS into HTML to make it more visually appealing for the 
   the user. B) Discussed in overview how users will interact with the trading bot. C) Discussed how HTML
   and CSS will be used to interact with Django and provided somewhat of a foundation to how it will be 
   displayed using CSS. D) Created a CSS document that interacts with HTML to make it much more enhanced.
