@@ -31,6 +31,8 @@ Group #14
   also see the amount of money that is currently in their profile.
 - 4. Profile Page: Users can see how much money is in their account and how much the funds in 
   their account have changed.
+- 5. Incorporated CSS into HTML file, making the page more user friendly and visually appealing
+  to those viewing it.
 
 4) Challenges, changes in the plan and scope of the project and things that went wrong during this
 increment
@@ -76,7 +78,12 @@ increment
   with Python and the code we already have. D) As stated above, have not written any of the source code yet 
   and have been familiarizing myself with what we have. E) Talked about the plans for the backend in the video.
 
-- Ilya Kogan: A) B) C) D) E)
+- Ilya Kogan: A) Talked a bit about implementing CSS into HTML to make it more visually appealing for the 
+  the user. B) Discussed in overview how users will interact with the trading bot. C) Discussed how HTML
+  and CSS will be used to interact with Django and provided somewhat of a foundation to how it will be 
+  displayed using CSS. D) Created a CSS document that interacts with HTML to make it much more enhanced.
+  E) Created a section of the video that describes what the CSS file does with HTML and went over how 
+  it looks from the users perspective.
 
 6) Plans for the next increment
 - Since the next increment is our last, we plan to fully finish the bot by developing the OU model and
