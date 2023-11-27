@@ -11,7 +11,7 @@ import os
 
 import pickle
 
-#from O_U import OU
+from O_U import OU
 
 #---------------------------------------------------------------------------------------#
 
@@ -78,7 +78,7 @@ def sma(price_data, window):
 # reaches the upper band.
 
 def BB(data):
-    
+    # Implementation needed
     return data
 
  
@@ -173,9 +173,6 @@ if (numClasses == 2):
     #data1['BB'] = BB(data1).pct_change()
     #data2['BB'] = BB(data2).pct_change()
 
-    #data1['MACD'] = MACD(data1).pct_change()
-    #data2['MACD'] = MACD(data2).pct_change()
-
     data1['rsi'] = rsi(data1, range).pct_change()
     data2['rsi'] = rsi(data2, range).pct_change()
 
@@ -186,7 +183,9 @@ if (numClasses == 2):
     processed_data2 = data2[range+1:].reset_index(drop=True)
 
     processed_data1.to_csv(pathname + classA + '_processed.csv')
+    print("Data processed for: " + classA)
     processed_data2.to_csv(pathname + classB + '_processed.csv')
+    print("Data processed for: " + classB)
 
 elif (numClasses == 1):
     data1['sma'] = sma(data1['CLOSE'], range).pct_change()
@@ -196,6 +195,7 @@ elif (numClasses == 1):
     processed_data1 = data1[range+1:].reset_index(drop=True)
 
     processed_data1.to_csv(pathname + classA + '_processed.csv')
+    print("Data loaded for: " + classA)
 
 #---------------------------------------------------------------------------------------#
 
