@@ -24,15 +24,15 @@ while (numClasses < 1 or numClasses > 2):
     numClasses = int(input("Number of classes for this stock (1 or 2): "))
     if (numClasses == 1):
         classA = input("Ticker name for the stock: ")
-        data1 = pd.read_csv('/Users/dominic/Desktop/ML-Trading-Bot/Source-Code/Backend/Data/Dump/' + classA + '.csv').iloc[:, 1:]
+        data1 = pd.read_csv('/Users/dominic/Desktop/ML-Trading-Bot/Source-Code/Backend/Raw_Data/Dump/' + classA + '.csv').iloc[:, 1:]
         print("Data loaded for: " + classA)
         # Note: If only 1 class, we need another dataset to compare this class to for 
         # the SVM model to work properly
     elif (numClasses == 2):
         classA = input("Ticker name for the first class: ")
         classB = input("Ticker name for the second class: ")
-        data1 = pd.read_csv('/Users/dominic/Desktop/ML-Trading-Bot/Source-Code/Backend/Data/Dump/' + classA + '.csv').iloc[:, 1:]
-        data2 = pd.read_csv('/Users/dominic/Desktop/ML-Trading-Bot/Source-Code/Backend/Data/Dump/' + classB + '.csv').iloc[:, 1:]
+        data1 = pd.read_csv('/Users/dominic/Desktop/ML-Trading-Bot/Source-Code/Backend/Data/Raw_Dump/' + classA + '.csv').iloc[:, 1:]
+        data2 = pd.read_csv('/Users/dominic/Desktop/ML-Trading-Bot/Source-Code/Backend/Data/Raw_Dump/' + classB + '.csv').iloc[:, 1:]
         print("Data loaded for: " + classA)
         print("Data loaded for: " + classB)
 
@@ -73,19 +73,35 @@ def BB(data):
  
 #---------------------------------------------------------------------------------------#
 
-# Our next trading signal will be a Moving Average Convergence Divergence Indicator:
+# Our next trading signal will be a Relative Strength Index:
 
-def MACD(data):
+# This function will measure the speed and change of price movements and will be very important
+# in determining when to buy/sell one of the classes.
 
-    return data
+def rsi(data, window):
+    i = 1
+    pos_period = [0]
+    neg_period = [0]
+    dataOpen = data['OPEN']
 
-#---------------------------------------------------------------------------------------#
+    while i < dataOpen.index[-1]:
+        if dataOpen[i] > dataOpen[i - 1]:
+            pos_period.append(dataOpen[i])
+            neg_period.append(0)
+        else:
+            pos_period.append(0)
+            neg_period.append(dataOpen[i])
+        i += 1
+    
+    pos_period = pd.Series(pos_period)
+    neg_period = pd.Series(neg_period)
 
-# Our next trading signal will be a Change of Character:
+    pos_sum = pd.Series(pos_period.rolling(window).sum())
+    neg_sum = pd.Series(neg_period.rolling(window).sum())
 
-def CC(data):
-
-    return data
+    temp = (window - pos_sum) / (window - neg_sum)
+    rsi = abs(100 - (100 / (1 + temp)))
+    return rsi[window:]
 
 #---------------------------------------------------------------------------------------#
 
@@ -103,7 +119,7 @@ def mfi(data, window):
     negatives = [0, 0]
     i = 1
 
-    while i < data.len() - 1:
+    while i < data.index[-1]:
         if money_flow[i] > money_flow[i - 1]:
             positives.append(money_flow[i] * data.loc[i, 'VOLUME'])
             negatives.append(0)
@@ -143,24 +159,26 @@ if (numClasses == 2):
     #data1['MACD'] = MACD(data1).pct_change()
     #data2['MACD'] = MACD(data2).pct_change()
 
-    #data1['CC'] = CC(data1).pct_change()
-    #data2['CC'] = CC(data2).pct_change()
+    data1['rsi'] = rsi(data1, range).pct_change()
+    data2['rsi'] = rsi(data2, range).pct_change()
 
-    #data1['mfi'] = mfi(data1, range).pct_change()
-    #data2['mfi'] = mfi(data2, range).pct_change()
+    data1['mfi'] = mfi(data1, range).pct_change()
+    data2['mfi'] = mfi(data2, range).pct_change()
 
     processed_data1 = data1[range+1:].reset_index(drop=True)
     processed_data2 = data2[range+1:].reset_index(drop=True)
 
-    processed_data1.to_csv(classA + '_processed.csv')
-    processed_data2.to_csv(classB + '_processed.csv')
+    processed_data1.to_csv('/Users/dominic/Desktop/ML-Trading-Bot/Source-Code/Backend/Data/Processed_Dump/' + classA + '_processed.csv')
+    processed_data2.to_csv('/Users/dominic/Desktop/ML-Trading-Bot/Source-Code/Backend/Data/Processed_Dump/' + classB + '_processed.csv')
 
 elif (numClasses == 1):
     data1['sma'] = sma(data1['CLOSE'], range).pct_change()
+    data1['rsi'] = rsi(data1).pct_change()
+    data1['mfi'] = mfi(data1, range).pct_change()
 
     processed_data1 = data1[range+1:].reset_index(drop=True)
 
-    processed_data1.to_csv(classA + '_processed.csv')
+    processed_data1.to_csv('/Users/dominic/Desktop/ML-Trading-Bot/Source-Code/Backend/Data/Processed_Dump/' + classA + '_processed.csv')
 
 #---------------------------------------------------------------------------------------#
 
