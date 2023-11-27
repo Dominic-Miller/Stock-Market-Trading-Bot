@@ -3,6 +3,7 @@
 
 import pandas as pd
 import numpy as np
+import os
 #import matplotlib.pyplot as plt
 
 #from sklearn import preprocessing
@@ -20,19 +21,29 @@ import pickle
 numClasses = 0
 classA = " "
 classB = " "
+
+# Get the user's path to the data folder we want to read from
+temp_path = os.path.abspath(os.path.dirname('path.txt'))
+idx = temp_path.find('ML-Trading-Bot')
+path = temp_path[:(idx+14)]
+pathname = path + '/Source-Code/Backend/Data/Raw_Dump/'
+
 while (numClasses < 1 or numClasses > 2):
     numClasses = int(input("Number of classes for this stock (1 or 2): "))
     if (numClasses == 1):
         classA = input("Ticker name for the stock: ")
-        data1 = pd.read_csv('/Users/dominic/Desktop/ML-Trading-Bot/Source-Code/Backend/Raw_Data/Dump/' + classA + '.csv').iloc[:, 1:]
+        filename = pathname + classA + '.csv'
+        data1 = pd.read_csv(filename).iloc[:, 1:]
         print("Data loaded for: " + classA)
         # Note: If only 1 class, we need another dataset to compare this class to for 
         # the SVM model to work properly
     elif (numClasses == 2):
         classA = input("Ticker name for the first class: ")
+        filename = pathname + classA + '.csv'
+        data1 = pd.read_csv(filename).iloc[:, 1:]
         classB = input("Ticker name for the second class: ")
-        data1 = pd.read_csv('/Users/dominic/Desktop/ML-Trading-Bot/Source-Code/Backend/Data/Raw_Dump/' + classA + '.csv').iloc[:, 1:]
-        data2 = pd.read_csv('/Users/dominic/Desktop/ML-Trading-Bot/Source-Code/Backend/Data/Raw_Dump/' + classB + '.csv').iloc[:, 1:]
+        filename = pathname + classB + '.csv'
+        data2 = pd.read_csv(filename).iloc[:, 1:]
         print("Data loaded for: " + classA)
         print("Data loaded for: " + classB)
 
@@ -148,6 +159,12 @@ def mfi(data, window):
 
 # Range will be our window size. We will set it to 10 for testing
 
+# Get the user's path to the folder we want to save the processed data to
+temp_path = os.path.abspath(os.path.dirname('path2.txt'))
+idx = temp_path.find('ML-Trading-Bot')
+path = temp_path[:(idx+14)]
+pathname = path + '/Source-Code/Backend/Data/Processed_Dump/'
+
 range = 10
 if (numClasses == 2):
     data1['sma'] = sma(data1['CLOSE'], range).pct_change()
@@ -168,8 +185,8 @@ if (numClasses == 2):
     processed_data1 = data1[range+1:].reset_index(drop=True)
     processed_data2 = data2[range+1:].reset_index(drop=True)
 
-    processed_data1.to_csv('/Users/dominic/Desktop/ML-Trading-Bot/Source-Code/Backend/Data/Processed_Dump/' + classA + '_processed.csv')
-    processed_data2.to_csv('/Users/dominic/Desktop/ML-Trading-Bot/Source-Code/Backend/Data/Processed_Dump/' + classB + '_processed.csv')
+    processed_data1.to_csv(pathname + classA + '_processed.csv')
+    processed_data2.to_csv(pathname + classB + '_processed.csv')
 
 elif (numClasses == 1):
     data1['sma'] = sma(data1['CLOSE'], range).pct_change()
@@ -178,7 +195,7 @@ elif (numClasses == 1):
 
     processed_data1 = data1[range+1:].reset_index(drop=True)
 
-    processed_data1.to_csv('/Users/dominic/Desktop/ML-Trading-Bot/Source-Code/Backend/Data/Processed_Dump/' + classA + '_processed.csv')
+    processed_data1.to_csv(pathname + classA + '_processed.csv')
 
 #---------------------------------------------------------------------------------------#
 
@@ -202,4 +219,3 @@ def create_list():
 list = create_list()
 New_OU = OU(processed_data1, processed_data2)
 New_OU.split_slide(m_size = 2000, e_size = 100)
-
