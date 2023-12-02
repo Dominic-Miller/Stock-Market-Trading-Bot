@@ -5,15 +5,15 @@ import pandas as pd
 import numpy as np
 import os
 import matplotlib.pyplot as plt
-
 from sklearn import preprocessing
 from sklearn.model_selection import TimeSeriesSplit
-
 import pickle
-
 from O_U import OU
 
 #---------------------------------------------------------------------------------------#
+
+# Before creating our trading signals, we first must pull in our target raw data from
+# the data dump for modification:
 
 # Get in the number of classes and their ticker names from user
 # Open up the data files that the user specified
@@ -49,7 +49,7 @@ while (numClasses < 1 or numClasses > 2):
 
 #---------------------------------------------------------------------------------------#
 
-# Now it is time to create the trading signals so our bot will know when to trade
+# Now it is time to create the trading signals so our bot will know when to trade:
 
 #---------------------------------------------------------------------------------------#
 
@@ -155,7 +155,7 @@ def mfi(data, window):
 # Now all of our trading signals have been defined
 
 # We will next use all of these trading signals to modify our raw data to include
-# the necessary technical indicators that will be fed into O_U.py
+# the necessary technical indicators that will be fed into O_U.py:
 
 # Range will be our window size. We will set it to 10 for testing
 
@@ -195,11 +195,11 @@ elif (numClasses == 1):
     processed_data1 = data1[range+1:].reset_index(drop=True)
 
     processed_data1.to_csv(pathname + classA + '_processed.csv')
-    print("Data loaded for: " + classA)
+    print("Data processed for: " + classA)
 
 #---------------------------------------------------------------------------------------#
 
-# Finally, we will model our residuals using the O-U model and feed this into our O_U file
+# Finally, we will model our residuals using the O-U model and feed this into our O_U file:
 
 # We want to create a new column in our data with the value either 0 or 1. The value will be 
 # 0 if spread of residuals is within our threshold and 1 if the spred exceeds our threshold.

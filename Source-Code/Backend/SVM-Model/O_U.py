@@ -10,12 +10,18 @@ import scipy.stats
 import sklearn
 from sklearn.model_selection import TimeSeriesSplit
 
+#---------------------------------------------------------------------------------------#
+
 # We will create an OU class and define our functions within this class to model the
-# residuals and turn our data into training data
+# residuals and turn our data into training data:
 
 class OU(object):
 
-    # Function to make sure the data sets have equal dimensions and initialize the new data:
+    #---------------------------------------------------------------------------------------#
+
+    # This first function will make sure the data sets have equal dimensions and initialize 
+    # the new data:
+
     def initialize(data, ds1, ds2, model_size = None, eval_size = None):
 
         data.ds1 = ds2
@@ -28,6 +34,10 @@ class OU(object):
         data.splits = []
 
         assert(ds1.shape == ds2.shape)
+
+    #---------------------------------------------------------------------------------------#
+
+    # These next two functions will split our indices to be used for our training data:
 
     # Function 1 to find split indices for expanding window cross-validation:
     # Takes in the data and number of splits we want for cross-validation
@@ -62,12 +72,16 @@ class OU(object):
 
         data.split_idx = splits
 
-    # Function that takes in the features of two different classes of a stock and calculates the 
-    # residuals which will then be used to find the T-Score:
+    #---------------------------------------------------------------------------------------#
+
+    # The next function takes in the features of two different classes of a stock and calculates 
+    # the residuals which will then be used to find the T-Score:
 
 
-    # Functions that Use the OU Model to transform the target features and then calculate the 
-    # residuals and get a T-Score again:
+    #---------------------------------------------------------------------------------------#
+
+    # These next two functions will use the OU Model to transform the target features and then
+    # calculate the residuals and get a T-Score which is very important:
 
     # This first function transforms the target feature vector slices using the OU model parameters that
     # we get from the fit() method. We will take in the slice of the first ticker feature vector, the
@@ -93,4 +107,10 @@ class OU(object):
         return {'tscore_transform_' + feature: t_score, 'residuals_transform_' + feature: residuals,
                 'transform_index_': np.array(ticker1.index)}
 
-    # Function that gets the splits
+
+
+    #---------------------------------------------------------------------------------------#
+
+    # This last function will get the final splits which will then create the dataset to be 
+    # sent over to Framework.py for training:
+
