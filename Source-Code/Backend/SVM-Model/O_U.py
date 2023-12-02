@@ -15,7 +15,7 @@ from sklearn.model_selection import TimeSeriesSplit
 
 class OU(object):
 
-    # Function to make sure the data sets have equal dimensions and initialize the new data
+    # Function to make sure the data sets have equal dimensions and initialize the new data:
     def initialize(data, ds1, ds2, model_size = None, eval_size = None):
 
         data.ds1 = ds2
@@ -29,14 +29,14 @@ class OU(object):
 
         assert(ds1.shape == ds2.shape)
 
-    # Function 1 to find split indices for expanding window cross-validation
+    # Function 1 to find split indices for expanding window cross-validation:
     # Takes in the data and number of splits we want for cross-validation
     def split_expand(data, n_splits = 5):
 
         tscv = TimeSeriesSplit(n_splits = n_splits)
         data.split_idx = list(tscv.split(data.ds1))
 
-    # Function 2 to find split indices for expanding window cross-validation
+    # Function 2 to find split indices for expanding window cross-validation:
     # Takes in the data, and the size of the training and testing models we want for cross-validation
     def split_slide(data, m_size = 30000, e_size = 10000):
 
@@ -63,11 +63,34 @@ class OU(object):
         data.split_idx = splits
 
     # Function that takes in the features of two different classes of a stock and calculates the 
-    # residuals which will then be used to find the T-Score.
+    # residuals which will then be used to find the T-Score:
 
 
     # Functions that Use the OU Model to transform the target features and then calculate the 
-    # residuals and get a T-Score again.
+    # residuals and get a T-Score again:
 
+    # This first function transforms the target feature vector slices using the OU model parameters that
+    # we get from the fit() method. We will take in the slice of the first ticker feature vector, the
+    # slice of the second ticker feature vector, and a dictionary to the parameter values.
+    def transform(self, ticker1, ticker2, feature, param_dict):
+
+        beta = param_dict['beta_fit_' + feature]
+        dx = param_dict['dx_fit_' + feature]
+        mu = param_dict['mu_fit_' + feature]
+        sigma = param_dict['sigma_fit_' + feature]
+        
+        feat1 = ticker1[feature]
+        feat2 = ticker2[feature]
+
+        residuals = feat1 - (feat2 * beta)
+
+        x_t = np.cumsum(residuals)
+
+        t_score = (x_t - mu) / sigma
+        t_score = np.abs(t_score)
+        t_score.name = feature
+
+        return {'tscore_transform_' + feature: t_score, 'residuals_transform_' + feature: residuals,
+                'transform_index_': np.array(ticker1.index)}
 
     # Function that gets the splits
