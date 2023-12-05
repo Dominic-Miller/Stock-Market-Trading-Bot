@@ -76,7 +76,37 @@ class OU(object):
 
     # The next function takes in the features of two different classes of a stock and calculates 
     # the residuals which will then be used to find the T-Score:
+    def fit(self, data1, data2, feature):
 
+        data1 = data1[feature]
+        data2 = data2[feature]
+        
+        # Estimate linear relationship using a linear regression
+        beta, dx, _, _, _ = scipy.stats.linregress(data2, data1)
+
+        # Calculate the residuals
+        residuals = data1 - (data2 * beta)
+
+        sum = np.cumsum(residuals)
+        lag_price = sum.shift(1)
+
+        # Perform lag-1 auto regression on the x_t and the lag
+        b, a, _, _, _ = scipy.stats.linregress(lag_price.iloc[1:], sum.iloc[1:])
+
+        # Calculate paramters to create a t-score
+        mu = a / (1 - b)
+        sigma = np.sqrt(np.var(sum))
+        
+        t_score = (sum - mu) / sigma
+        t_score.name = feature
+
+        # Return absolute value of t_score since we only care about the spread
+        t_score = np.abs(t_score)
+
+        return {'tscore_fit_' + feature: t_score, 'residuals_fit_' + feature: residuals,
+                'beta_fit_' + feature: beta, 'dx_fit_' + feature: dx,
+                'mu_fit_' + feature: mu, 'sigma_fit_' + feature: sigma,
+                'fit_index_' + feature: np.array(data1.index)}
 
     #---------------------------------------------------------------------------------------#
 
