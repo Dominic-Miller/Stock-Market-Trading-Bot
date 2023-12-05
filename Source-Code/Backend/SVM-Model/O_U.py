@@ -76,7 +76,7 @@ class OU(object):
 
     # The next function takes in the features of two different classes of a stock and calculates 
     # the residuals which will then be used to find the T-Score:
-    def fit(self, data1, data2, feature):
+    def featureFit(self, data1, data2, feature):
 
         data1 = data1[feature]
         data2 = data2[feature]

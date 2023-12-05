@@ -36,4 +36,27 @@ print("Data loaded for: " + classB)
 # The next thing we will need to do is create a dataframe where we can display our profits
 # and losses so we can track our net profit over time:
 
+def profit_loss_dataframe(ticker1, ticker2, data):
+
+    ticker1_name = ticker1['TICKER']
+    ticker2_name = ticker2['TICKER']
+
+    dataframe = pd.DataFrame()
+    dataframe_labels = pd.Series()
+
+
+
+
+    return dataframe
+
+#---------------------------------------------------------------------------------------#
+
+# All we have left before training our bot is to define a few more functions which will
+# modify our datasets to be exactly how we need it for training:
+
+
+
+#---------------------------------------------------------------------------------------#
+
+# Now we will call these functions to create our dataframe and display our profits:
 
