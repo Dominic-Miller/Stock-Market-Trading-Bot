@@ -137,7 +137,31 @@ class OU(object):
         return {'tscore_transform_' + feature: t_score, 'residuals_transform_' + feature: residuals,
                 'transform_index_': np.array(ticker1.index)}
 
+    # This next function takes in the features of the two different classes and calculates
+    # the residuals. It then estimates the parameters for the OU equation and turns in into 
+    # a t-score.
+    def fit_transform(self, ticker1, ticker2, t1, t2, OU_params, OU_features = None):
 
+        fit_dicts = {}
+        t_score_dicts = {}
+
+        for feature in OU_params:
+            temp_dict = self.fit_feature(ticker1, ticker2, feature)
+            fit_dicts.update(temp_dict)
+            t_dict = self.transform(t1, t2, feature, fit_dicts)
+            t_score_dicts.update(t_dict)
+
+        training_data = pd.DataFrame([fit_dicts[f] for f in fit_dicts.keys() if 'tscore' in f]).transpose()
+        testing_data = pd.DataFrame([t_score_dicts[t] for t in t_score_dicts.keys() if 'tscore' in t]).transpose()
+
+        if OU_features:
+            for feature in OU_features:
+                training_data[feature + '1'] = ticker1[feature]
+                training_data[feature + '2'] = ticker2[feature]
+                testing_data[feature + '1'] = t1[feature]
+                testing_data[feature + '2'] = t2[feature]
+
+        return {'train': {'df': training_data, **fit_dicts}, 'test': {'df': testing_data, **t_score_dicts}}
 
     #---------------------------------------------------------------------------------------#
 
