@@ -41,14 +41,14 @@ class OU(object):
 
     # Function 1 to find split indices for expanding window cross-validation:
     # Takes in the data and number of splits we want for cross-validation
-    def split_expand(data, n_splits = 5):
+    def expand(data, n_splits = 5):
 
         tscv = TimeSeriesSplit(n_splits = n_splits)
         data.split_idx = list(tscv.split(data.ds1))
 
     # Function 2 to find split indices for expanding window cross-validation:
     # Takes in the data, and the size of the training and testing models we want for cross-validation
-    def split_slide(data, m_size = 30000, e_size = 10000):
+    def slide(data, m_size = 30000, e_size = 10000):
 
         splits = []
         end_ind = m_size
@@ -140,7 +140,7 @@ class OU(object):
     # This next function takes in the features of the two different classes and calculates
     # the residuals. It then estimates the parameters for the OU equation and turns in into 
     # a t-score.
-    def fit_transform(self, ticker1, ticker2, t1, t2, OU_params, OU_features = None):
+    def transformFit(self, ticker1, ticker2, t1, t2, OU_params, OU_features = None):
 
         fit_dicts = {}
         t_score_dicts = {}
@@ -161,10 +161,47 @@ class OU(object):
                 testing_data[feature + '1'] = t1[feature]
                 testing_data[feature + '2'] = t2[feature]
 
-        return {'train': {'df': training_data, **fit_dicts}, 'test': {'df': testing_data, **t_score_dicts}}
+        return {'train': {'ds': training_data, **fit_dicts}, 'test': {'ds': testing_data, **t_score_dicts}}
 
     #---------------------------------------------------------------------------------------#
 
     # This last function will get the final splits which will then create the dataset to be 
     # sent over to Framework.py for training:
 
+    # This will return a final list of all fit and transformed data
+    def split(self, OU_params, OU_features = None, labels = None, weight = False):
+
+        assert(self.split_idx)
+        final_list = []
+
+        # Transform our fits using the train and test datasets for each of the splits
+        for train, test in self.split_idx:
+            ds_train1 = self.ds1.loc[train]
+            ds_train2 = self.ds2.loc[train]
+            ds_test1 = self.ds1.loc[test]
+            ds_test2 = self.ds2.loc[test]
+            ft = self.fit_transform(ds_train1, ds_train2, ds_test1, ds_test2, OU_params, OU_features)
+            ft['train']['index'] = train
+            ft['test']['index'] = test
+
+            # Create the labels for our data
+            if labels:
+                training_labels = labels(ft['train']['residuals_fit_price'])
+                testing_labels = labels(ft['test']['residuals_transform_price'])
+                ft['train']['labels'] = training_labels
+                ft['test']['labels'] = testing_labels
+
+            # Finally, perform our feature scaling
+            if weight:
+                scaler = sklearn.preprocessing.MinMaxScaler()
+                x_scale = scaler.fit_transform(ft['train']['ds'])
+                y_scale = scaler.transform(ft['test']['ds'])
+                ds_scale_x = pd.DataFrame(x_scale)
+                ds_scale_y = pd.DataFrame(y_scale)
+                ft['train']['ds_scale'] = ds_scale_x
+                ft['test']['ds_scale'] = ds_scale_y
+
+            final_list.append(ft)
+        self.fts = final_list
+        return final_list
+    
