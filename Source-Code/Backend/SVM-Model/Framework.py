@@ -31,12 +31,15 @@ data2 = pd.read_csv(filename).iloc[:, 1:]
 print("Data loaded for: " + classA)
 print("Data loaded for: " + classB)
 
+# Load in info data
+info = np.load()
+
 #---------------------------------------------------------------------------------------#
 
 # The next thing we will need to do is create a dataframe where we can display our profits
 # and losses so we can track our net profit over time:
 
-def profit_loss_dataframe(ticker1, ticker2, data):
+def profit_loss_dataframe(ticker1, ticker2, info):
 
     classA = ticker1['TICKER']
     classB = ticker2['TICKER']
@@ -44,7 +47,7 @@ def profit_loss_dataframe(ticker1, ticker2, data):
     dataframe = pd.DataFrame()
     dataframe_labels = pd.Series()
 
-    for i in data:
+    for i in info:
         idx = i['test']['index']
         residuals = i['test']['residuals_transform_price']
         beta = i['train']['beta_fit_price']
@@ -70,8 +73,21 @@ def profit_loss_dataframe(ticker1, ticker2, data):
 # All we have left before training our bot is to define a few more functions which will
 # modify our datasets to be exactly how we need it for training:
 
-# This function will format a dictionary of parameters into a single string that can be 
-# written to a file:
+# This function will find an SVM that will work based on the parameters dictionary:
+def find_svm(param_dict, info):
+
+    labels = []
+
+    for i in info:
+        temp_svm = svm.SVC(**param_dict)
+        temp_svm.fit(i['train']['df_scale'], i['train']['labels'])
+        label = temp_svm.predict(i['test']['df_scale'])
+        labels.append(label)
+
+    return np.hstack(labels)
+
+# This next function will format a dictionary of parameters into a single string that can 
+# be written to a file:
 def format_parameters(param_dict):
     param = ', '.join("{!s}-{!r}".format(key, val) for (key, val) in param_dict.items())
     param = param.replace("{", "")
@@ -86,19 +102,23 @@ def format_parameters(param_dict):
     return param
 
 # This next function will find the sharpe of our profit/loss dataframe:
-
+def find_sharpe(df):
+    
+    return sharpe
 
 # This next function will find the sortino ratio of our profit/loss dataframe:
+def find_ratio(df):
 
-
-# This next function will find an SVM that will work based on the parameters:
-
+    return ratio
 
 # This final function will perform our profit/loss backtesting and give our prediction
 # labels which will then be used to tell the bot if it is correct or not:
+def backtesting(df, label, params):
+
+    return result
 
 #---------------------------------------------------------------------------------------#
 
 # Now we will call these functions to create our dataframe and display our profits:
 
-pl_df = profit_loss_dataframe(data1, data2, data)
+pl_df = profit_loss_dataframe(data1, data2, info)
