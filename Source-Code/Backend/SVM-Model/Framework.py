@@ -38,15 +38,31 @@ print("Data loaded for: " + classB)
 
 def profit_loss_dataframe(ticker1, ticker2, data):
 
-    ticker1_name = ticker1['TICKER']
-    ticker2_name = ticker2['TICKER']
+    classA = ticker1['TICKER']
+    classB = ticker2['TICKER']
 
     dataframe = pd.DataFrame()
     dataframe_labels = pd.Series()
 
+    for i in data:
+        idx = i['test']['index']
+        residuals = i['test']['residuals_transform_price']
+        beta = i['train']['beta_fit_price']
+        df_temp = pd.concat([ticker1.loc[idx]['CLOSE'], beta * ticker2.loc[idx]['CLOSE'], ticker1.loc[idx]['price'],
+                             beta * ticker2.loc[idx]['price'], i['test']['residuals_transform_price'], ticker1.loc[idx]['TIMESTAMP']], axis=1)
+        datafram = dataframe.append(df_temp)
+        dataframe_labels = dataframe_labels.append(i['test']['labels'])
 
+    dataframe['label'] = dataframe_labels
+    dataframe.columns = [classA, 'beta*' + classB, classA + '_return', 'beta*' + classB + '_return', 'residual', 'TIMESTAMP', 'label']
 
-
+    # Find the profit or loss of the last trade
+    dataframe['beta*' + classB + '_gains'] = dataframe['beta*' + classB] - (1 - dataframe['beta*' + classB + '_return']) * dataframe['beta*' + classB]
+    dataframe[classA + '_gains'] = dataframe[classA] - (1 - dataframe[classA + '_return']) * dataframe[classA]
+    dataframe['profit'] = dataframe['beta*' + classB + '_gains'] - dataframe[classA + '_gains']
+    for i, item in enumerate(dataframe['TIMESTAMP']):
+        dataframe.loc[i, 'TIMESTAMP'] = pd.to_datetime(item)
+    
     return dataframe
 
 #---------------------------------------------------------------------------------------#
@@ -54,9 +70,35 @@ def profit_loss_dataframe(ticker1, ticker2, data):
 # All we have left before training our bot is to define a few more functions which will
 # modify our datasets to be exactly how we need it for training:
 
+# This function will format a dictionary of parameters into a single string that can be 
+# written to a file:
+def format_parameters(param_dict):
+    param = ', '.join("{!s}-{!r}".format(key, val) for (key, val) in param_dict.items())
+    param = param.replace("{", "")
+    param = param.replace("}", "")
+    param = param.replace("'", "")
+    param = param.replace(",", "")
+    param = param.replace(" ", "")
+    param = param.replace(":", "")
+    param = param.replace(".", "")
+    param = param.strip()
 
+    return param
+
+# This next function will find the sharpe of our profit/loss dataframe:
+
+
+# This next function will find the sortino ratio of our profit/loss dataframe:
+
+
+# This next function will find an SVM that will work based on the parameters:
+
+
+# This final function will perform our profit/loss backtesting and give our prediction
+# labels which will then be used to tell the bot if it is correct or not:
 
 #---------------------------------------------------------------------------------------#
 
 # Now we will call these functions to create our dataframe and display our profits:
 
+pl_df = profit_loss_dataframe(data1, data2, data)
