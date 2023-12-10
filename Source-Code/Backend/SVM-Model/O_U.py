@@ -22,7 +22,7 @@ class OU(object):
     # This first function will make sure the data sets have equal dimensions and initialize 
     # the new data:
 
-    def initialize(data, ds1, ds2, model_size = None, eval_size = None):
+    def __init__(data, ds1, ds2, model_size = None, eval_size = None):
 
         data.ds1 = ds2
         data.ds2 = ds2
@@ -76,16 +76,16 @@ class OU(object):
 
     # The next function takes in the features of two different classes of a stock and calculates 
     # the residuals which will then be used to find the T-Score:
-    def featureFit(self, data1, data2, feature):
+    def featureFit(self, d1, d2, feature):
 
-        data1 = data1[feature]
-        data2 = data2[feature]
+        d1 = d1[feature]
+        d2 = d2[feature]
         
         # Estimate linear relationship using a linear regression
-        beta, dx, _, _, _ = scipy.stats.linregress(data2, data1)
+        beta, dx, _, _, _ = scipy.stats.linregress(d2, d1)
 
         # Calculate the residuals
-        residuals = data1 - (data2 * beta)
+        residuals = d1 - (d2 * beta)
 
         sum = np.cumsum(residuals)
         lag_price = sum.shift(1)
@@ -146,7 +146,7 @@ class OU(object):
         t_score_dicts = {}
 
         for feature in OU_params:
-            temp_dict = self.fit_feature(ticker1, ticker2, feature)
+            temp_dict = self.featureFit(ticker1, ticker2, feature)
             fit_dicts.update(temp_dict)
             t_dict = self.transform(t1, t2, feature, fit_dicts)
             t_score_dicts.update(t_dict)
@@ -180,7 +180,7 @@ class OU(object):
             ds_train2 = self.ds2.loc[train]
             ds_test1 = self.ds1.loc[test]
             ds_test2 = self.ds2.loc[test]
-            ft = self.fit_transform(ds_train1, ds_train2, ds_test1, ds_test2, OU_params, OU_features)
+            ft = self.transformFit(ds_train1, ds_train2, ds_test1, ds_test2, OU_params, OU_features)
             ft['train']['index'] = train
             ft['test']['index'] = test
 
@@ -194,7 +194,7 @@ class OU(object):
             # Finally, perform our feature scaling
             if weight:
                 scaler = sklearn.preprocessing.MinMaxScaler()
-                x_scale = scaler.fit_transform(ft['train']['ds'])
+                x_scale = scaler.transformFit(ft['train']['ds'])
                 y_scale = scaler.transform(ft['test']['ds'])
                 ds_scale_x = pd.DataFrame(x_scale)
                 ds_scale_y = pd.DataFrame(y_scale)

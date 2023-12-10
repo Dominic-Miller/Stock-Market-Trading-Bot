@@ -24,9 +24,11 @@ classB = " "
 
 # Get the user's path to the data folder we want to read from
 temp_path = os.path.abspath(os.path.dirname('path.txt'))
-idx = temp_path.find('ML-Trading-Bot')
-path = temp_path[:(idx+14)]
+idx = temp_path.find('Stock-Market-Trading-Bot')
+path = temp_path[:(idx+24)]
 pathname = path + '/Source-Code/Backend/Data/Raw_Dump/'
+
+stockName = input("Name for this stock: ")
 
 while (numClasses < 1 or numClasses > 2):
     numClasses = int(input("Number of classes for this stock (1 or 2): "))
@@ -161,8 +163,8 @@ def mfi(data, window):
 
 # Get the user's path to the folder we want to save the processed data to
 temp_path = os.path.abspath(os.path.dirname('path2.txt'))
-idx = temp_path.find('ML-Trading-Bot')
-path = temp_path[:(idx+14)]
+idx = temp_path.find('Stock-Market-Trading-Bot')
+path = temp_path[:(idx+24)]
 pathname = path + '/Source-Code/Backend/Data/Processed_Dump/'
 
 range = 10
@@ -179,8 +181,11 @@ if (numClasses == 2):
     data1['mfi'] = mfi(data1, range).pct_change()
     data2['mfi'] = mfi(data2, range).pct_change()
 
-    processed_data1 = data1[range+1:].reset_index(drop=True)
-    processed_data2 = data2[range+1:].reset_index(drop=True)
+    data1['price'] = data1['CLOSE'].pct_change()
+    data2['price'] = data2['CLOSE'].pct_change()
+
+    processed_data1 = data1[range+1:].reset_index(drop = True)
+    processed_data2 = data2[range+1:].reset_index(drop = True)
 
     processed_data1.to_csv(pathname + classA + '_processed.csv')
     print("Data processed for: " + classA)
@@ -189,8 +194,10 @@ if (numClasses == 2):
 
 elif (numClasses == 1):
     data1['sma'] = sma(data1['CLOSE'], range).pct_change()
+    #data1['BB'] = BB(data1).pct_change()
     data1['rsi'] = rsi(data1).pct_change()
     data1['mfi'] = mfi(data1, range).pct_change()
+    data1['price'] = data1['CLOSE'].pct_change()
 
     processed_data1 = data1[range+1:].reset_index(drop=True)
 
@@ -216,6 +223,10 @@ def create_list():
         return val
     return create_list
 
+# Create our info 4d dataframe to be used for Framework.py
+InfoPath = path + '/Source-Code/Backend/Data/Info'
 list = create_list()
 New_OU = OU(processed_data1, processed_data2)
-New_OU.split_slide(m_size = 2000, e_size = 100)
+New_OU.slide(m_size = 2000, e_size = 100)
+info = New_OU.split(['price', 'sma', 'rsi', 'mfi'], labels = list, weight = True)
+np.save(InfoPath + stockName + '_info.npy', info)
