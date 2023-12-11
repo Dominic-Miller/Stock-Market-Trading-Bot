@@ -106,6 +106,11 @@ def find_sharpe(df):
     
     return sharpe
 
+# This next function is a quick function to find the precision:
+def find_precision(labels, label):
+
+    return precision 
+
 # This next function will find the sortino ratio of our profit/loss dataframe:
 def find_ratio(df):
 
@@ -115,7 +120,56 @@ def find_ratio(df):
 # labels which will then be used to tell the bot if it is correct or not:
 def backtesting(df, label, params):
 
-    return result
+    results = {}
+
+    param_str = format_parameters(params)
+    profit = 0.0
+
+    profit_timeline = []
+    trade_timeline = []
+    held_timeline = []
+    data = []
+
+    temp_df = df.copy()
+    temp_df['label'] = label
+
+    # Iterate through our dataframe
+    for row in temp_df.iterrows():
+        cur_profit = 0.0
+        profit = row[1]['profit']
+        residual = row[1]['residual']
+
+        # Iterate through our trading data
+        # We will use a window of 10 and threshold of 0.001
+        for position in data:
+            position['fresh'] += 1
+            position['profit'] += profit
+            if(position['residual'] - 0.001 >= residual) or position['fresh'] >= 10:
+                cur_profit += position['profit']
+                trade_timeline.append(position['profit'])
+                held_timeline.append(position['fresh'])
+                data.remove(position)
+        profit_timeline.append(cur_profit)
+        profit += cur_profit
+
+        if row[1]['label'] == 1 and residual > 0:
+            data.append({'profit': 0, 'residual': residual, 'fresh': 0})
+        
+    temp_df['profit_timeline'] = profit_timeline
+
+    # Add all of our necessary collumns to our returning profit/loss dataframe
+    results['total_profit'] = profit
+    results['daily_profit_timeline'] = profit_timeline
+    results['trade_profit_timeline'] = trade_timeline
+    results['time_held_timeline'] = held_timeline
+    results['trades_executed'] = len(trade_timeline)
+    results['params'] = params
+    results['precision'] = find_precision(temp_df['label'], df['label'])
+    results['mean_profit_per_trade'] = np.mean(trade_timeline)
+    results['sharpe'] = find_sharpe(temp_df)
+    results['sortino'] = find_ratio(temp_df)
+
+    return results
 
 #---------------------------------------------------------------------------------------#
 
