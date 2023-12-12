@@ -17,22 +17,26 @@ import pickle
 
 # Get the user's path to the folder we want to read the data from
 temp_path = os.path.abspath(os.path.dirname('path2.txt'))
-idx = temp_path.find('ML-Trading-Bot')
-path = temp_path[:(idx+14)]
+idx = temp_path.find('Stock-Market-Trading-Bot')
+path = temp_path[:(idx+24)]
 pathname = path + '/Source-Code/Backend/Data/Processed_Dump/'
+
+# Get the name of the stock
+stockName = input("Name for this stock: ")
 
 # Take in the two ticker names for the two stocks and load in the processed data
 classA = input("Ticker name for the first class: ")
-filename = pathname + classA + '.csv'
+filename = pathname + classA + '_processed.csv'
 data1 = pd.read_csv(filename).iloc[:, 1:]
 classB = input("Ticker name for the second class: ")
-filename = pathname + classB + '.csv'
+filename = pathname + classB + '_processed.csv'
 data2 = pd.read_csv(filename).iloc[:, 1:]
 print("Data loaded for: " + classA)
 print("Data loaded for: " + classB)
 
 # Load in info data
-info = np.load()
+infoPath = path + '/Source-Code/Backend/Data/Info/'
+info = np.load(infoPath + stockName + '_info.npy', allow_pickle = True)
 
 #---------------------------------------------------------------------------------------#
 
