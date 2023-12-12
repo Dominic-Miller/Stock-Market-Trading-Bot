@@ -106,7 +106,7 @@ class OU(object):
         return {'tscore_fit_' + feature: t_score, 'residuals_fit_' + feature: residuals,
                 'beta_fit_' + feature: beta, 'dx_fit_' + feature: dx,
                 'mu_fit_' + feature: mu, 'sigma_fit_' + feature: sigma,
-                'fit_index_' + feature: np.array(data1.index)}
+                'fit_index_' + feature: np.array(d1.index)}
 
     #---------------------------------------------------------------------------------------#
 

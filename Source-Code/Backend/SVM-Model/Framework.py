@@ -103,17 +103,46 @@ def format_parameters(param_dict):
 
 # This next function will find the sharpe of our profit/loss dataframe:
 def find_sharpe(df):
+    days = {}
+    count = 0
+    for i, time in enumerate(df['TIMESTAMP']):
+        time = pd.to_datetime(time)
+        time = time.date()
+        time = time.strftime('%m/%d/%Y')
+        number = df.iloc[i]['profit_timeline']
+        if time in days.keys():
+            days[time] = number + days[time]
+        else:
+            count += 1
+            days[time] = number
+    df = pd.DataFrame.from_dict(days, orient='index')
     
+    sharpe = (df.mean() / df.std()) * np.sqrt(252)
     return sharpe
 
 # This next function is a quick function to find the precision:
 def find_precision(labels, label):
-
+    precision = labels[np.logical_and(labels == 1, label == 1)].shape[0]/labels[labels == 1].shape[0]
     return precision 
 
 # This next function will find the sortino ratio of our profit/loss dataframe:
 def find_ratio(df):
+    days = {}
+    count = 0
+    for i , time in enumerate(df['TIMESTAMP']):
+        time = pd.to_datetime(time)
+        time = time.date()
+        time = time.strftime('%m/%d/%Y')
+        number = df.iloc[i]['profit_timeline']
+        if time in days.keys():
+            days[time] = number + days[time]
+        else:
+            count += 1
+            days[time] = number
 
+    df = pd.DataFrame.from_dict(days, orient='index')
+
+    ratio = (df.mean() / df[df < 0].std()) * np.sqrt(252)
     return ratio
 
 # This final function will perform our profit/loss backtesting and give our prediction
