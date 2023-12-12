@@ -22,16 +22,16 @@ class OU(object):
     # This first function will make sure the data sets have equal dimensions and initialize 
     # the new data:
 
-    def __init__(data, ds1, ds2, model_size = None, eval_size = None):
+    def __init__(self, ds1, ds2, model_size = None, eval_size = None):
 
-        data.ds1 = ds2
-        data.ds2 = ds2
-        data.final_ds = None
-        data.m_size = model_size
-        data.e_size = eval_size
-        data.fts = []
-        data.split_idx = []
-        data.splits = []
+        self.ds1 = ds1
+        self.ds2 = ds2
+        self.final_ds = None
+        self.m_size = model_size
+        self.e_size = eval_size
+        self.fts = []
+        self.split_idx = []
+        self.splits = []
 
         assert(ds1.shape == ds2.shape)
 
@@ -41,36 +41,36 @@ class OU(object):
 
     # Function 1 to find split indices for expanding window cross-validation:
     # Takes in the data and number of splits we want for cross-validation
-    def expand(data, n_splits = 5):
+    def expand(self, n_splits = 5):
 
         tscv = TimeSeriesSplit(n_splits = n_splits)
-        data.split_idx = list(tscv.split(data.ds1))
+        self.split_idx = list(tscv.split(self.ds1))
 
     # Function 2 to find split indices for expanding window cross-validation:
     # Takes in the data, and the size of the training and testing models we want for cross-validation
-    def slide(data, m_size = 30000, e_size = 10000):
+    def slide(self, m_size = 30000, e_size = 10000):
 
         splits = []
         end_ind = m_size
         cur_ind = 0
 
-        assert(m_size < data.ds1.shape[0])
+        assert(m_size < self.ds1.shape[0])
 
-        while end_ind < data.ds1.shape[0]:
+        while end_ind < self.ds1.shape[0]:
             # Find training indices
             train_ind = np.array(np.arange(cur_ind, end_ind))
 
             # If test indices for last test split is less than e_size, use remaining
-            if (end_ind + e_size) < data.ds1.shape[0]:
+            if (end_ind + e_size) < self.ds1.shape[0]:
                 test_ind = np.array(np.arange(end_ind, (end_ind + e_size)))
             else:
-                test_ind = np.array(np.arange(end_ind, data.ds1.shape[0]))
+                test_ind = np.array(np.arange(end_ind, self.ds1.shape[0]))
 
             splits.append((train_ind, test_ind))
             end_ind += e_size
             cur_ind += e_size
 
-        data.split_idx = splits
+        self.split_idx = splits
 
     #---------------------------------------------------------------------------------------#
 
@@ -90,7 +90,7 @@ class OU(object):
         sum = np.cumsum(residuals)
         lag_price = sum.shift(1)
 
-        # Perform lag-1 auto regression on the x_t and the lag
+        # Perform lag-1 auto regression on the sum and the lag
         b, a, _, _, _ = scipy.stats.linregress(lag_price.iloc[1:], sum.iloc[1:])
 
         # Calculate paramters to create a t-score
@@ -173,7 +173,6 @@ class OU(object):
 
         assert(self.split_idx)
         final_list = []
-
         # Transform our fits using the train and test datasets for each of the splits
         for train, test in self.split_idx:
             ds_train1 = self.ds1.loc[train]
@@ -194,7 +193,7 @@ class OU(object):
             # Finally, perform our feature scaling
             if weight:
                 scaler = sklearn.preprocessing.MinMaxScaler()
-                x_scale = scaler.transformFit(ft['train']['ds'])
+                x_scale = scaler.fit_transform(ft['train']['ds'])
                 y_scale = scaler.transform(ft['test']['ds'])
                 ds_scale_x = pd.DataFrame(x_scale)
                 ds_scale_y = pd.DataFrame(y_scale)

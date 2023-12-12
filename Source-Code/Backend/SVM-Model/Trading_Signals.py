@@ -212,21 +212,22 @@ elif (numClasses == 1):
 # 0 if spread of residuals is within our threshold and 1 if the spred exceeds our threshold.
 # We will use a threshold of 0.001 and spread of 10
 
-def create_list(): 
+def create_list(threshold = 0.001): 
     def addResiduals(spread):
         min = spread[::-1].rolling(window = 10).min()[::-1]
         min.iloc[-10:] = spread.iloc[-10:]
 
-        zero_or_one = (spread - min) > 0.001 # If outside threshold: 1
+        zero_or_one = (spread - min) > threshold # If outside threshold: 1
         val = int(zero_or_one == True) # Convert our bool to either 0 or 1
 
         return val
     return create_list
 
 # Create our info 4d dataframe to be used for Framework.py
-InfoPath = path + '/Source-Code/Backend/Data/Info'
-list = create_list()
+InfoPath = path + '/Source-Code/Backend/Data/Info/'
+list = create_list(threshold = 0.001)
 New_OU = OU(processed_data1, processed_data2)
 New_OU.slide(m_size = 2000, e_size = 100)
 info = New_OU.split(['price', 'sma', 'rsi', 'mfi'], labels = list, weight = True)
 np.save(InfoPath + stockName + '_info.npy', info)
+print("Info file generated for " + stockName)
