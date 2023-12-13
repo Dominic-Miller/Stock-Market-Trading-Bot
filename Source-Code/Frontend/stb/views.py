@@ -44,3 +44,6 @@ def register(request):
     else:
         form = UserCreationForm()
     return render(request, 'register.html', {'form': form})
+
+def about(request):
+    return render(request, 'about.html')
