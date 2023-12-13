@@ -1,9 +1,12 @@
 Progress Report
-- Increment 1 -
+- Increment 2 -
 Group #14
 
 1) Team Members
-Please write the name of all the team members, their FSU IDs, and GitHub IDs here.
+- Kian Haghighi (FSU ID: kh21e, GitHub ID: KianHaghighi)
+- Dominic Miller (FSU ID: dgm21, Github ID: Dominic-Miller)
+- Edwin Laguerre (FSU ID: el21l, Github ID: Edwinlaguerre)
+- Ilya Kogan (FSU ID: ik22g, Github ID: kogan782)
 
 2) Project Title and Description
 - Stock Market Trading Bot
@@ -15,31 +18,40 @@ Please write the name of all the team members, their FSU IDs, and GitHub IDs her
   have looked like.
 
 3) Accomplishments and overall project status during this increment
-Describe in detail what was accomplished during this increment and where your project stands
-overall compared to the initial scope and functionality proposed.
+- 1. OU Model: In this increment, 
+- 2. Framework & Backtesting: 
+- 3. Info Data: 
+- 4. Final Model Training:
+- 5. Price Simulation:
 
 4) Challenges, changes in the plan and scope of the project and things that went wrong during this
 increment
-Please describe here in detail:
-- anything that was challenging during this increment and how you dealt with the challenges
-- any changes that occurred in the initial plan you had for the project or its scope. Describe the
-reasons for the changes.
-- anything that went wrong during this increment
+- 1. Linear Regression:
+- 2. Math Functions:
+- 3. Profit/Loss Dataframe:
+- 4. Backend & Frontend Split:
 
 5) Team Member Contribution for this increment
-Please list each individual member and their contributions to each of the deliverables in this
-increment (be as detailed as possible). In other words, describe the contribution of each team
-member to:
-a) the progress report, including the sections they wrote or contributed to
-b) the requirements and design document, including the sections they wrote or contributed to
-c) the implementation and testing document, including the sections they wrote or contributed to
-d) the source code (be detailed about which parts of the system each team member contributed to
-and how)
-e) the video or presentation
+- Dominic Miller: A) Wrote the majority of the progress report document including the project desription,
+  OU, Framework, Info, Training, and Simulation accomplishments. Also the Linear Regression, Math Functions,
+  and Profit/Loss Dataframe challenges and the Backend & Frontend Split changes along with this part. 
+  B) Wrote the changes and updates to the requirements & design document along with updates to the diagrams. 
+  C) Wrote the entirety of edits to the implementation and testing document since the last increment along 
+  with updates to execution-based functional testing, execution-based non-functional testing, and 
+  non-executional-based testing parts. D) Wrote the entirety of our backend source code including the 
+  O_U.py file, Framework.ipynb file, updates to Trading_Signals.py, processed and info data dumps, and much 
+  more. E) Did the intro and overview of the current project in our increment's video. Also discussed the 
+  state of the backend,what was accomplished on the backend, a demo of the backend, our changes of scope, 
+  and an overview of the completed backend for this project.
+
+- Kian Haghighi: A) B) C) D) E) 
+
+- Edwin Laguerre: A) B) C) D) E) 
+
+- Ilya Kogan: A) B) C) D) E) 
 
 6) Plans for the next increment
-If this report if for the first or second increment, describe what are you planning to achieve in the
-next increment.
+- This was our final increment.
 
 7) Link to video
-Paste here the link to your video.
+
