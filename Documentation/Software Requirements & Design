@@ -123,20 +123,21 @@ Site User
     |__________ View real-time market data
 
 Authorized Developer
-    |__________ Train ML Bot ____<include>____ Trading signals
+    |__________ Save & Update Data Files ____<include>____ Get User's Absolute Paths (OS Library)
+    |__________ Train ML Bot ____<include>____ Trading signals & OU & Framework
     |__________ Upload Bot Simulations 
     |__________ Pull Data with API ____<include>____ User interaction
 
 5. Class Diagram and/or Sequence Diagrams
 < Could not upload an image to this repository >
-Tiingo         Get_Data      Data Dump      Trading_Signals      O_U      Framework      Browser
-  |               |              |                 |              |           |             |
-  |               |              |___Upload Data___|              |           |_Upload Bots_|
-  |___Pull Data___|              |                 |_Process Data_|           |             |
-  |               |__Save Data___|                 |              |           |             |
-  |               |              |                 |              |           |__Send Data__|
-  |               |              |                 |_Buy Signals__|           |             |
-  |               |              |                 |              |           |             |
+Tiingo         Get_Data      Data Dump      Trading_Signals      O_U      Framework      Browser       Portfolio
+  |               |              |                 |              |           |             |              |
+  |               |              |___Upload Data___|              |           |_Upload Bots_|              |
+  |___Pull Data___|              |                 |_Process Data_|           |             |              |
+  |               |__Save Data___|                 |              |           |             |Run Simulation|
+  |               |              |                 |              |           |__Send Data__|              |
+  |               |              |                 |_Buy Signals__|           |             |              |
+  |               |              |                 |              |           |             |              |
 
 6. Operating Environment
 -  The software will operate on standard hardware platforms running compatible operating systems, such as Windows 10, 
