@@ -49,4 +49,4 @@ Authors: Dominic Miller, Kian Haghighi, Edwin Laguerre, Ilya Kogan
 - To perform non-execution-based testing, all code is carefully inspected and reviewed after any major 
   changes and improvements to code with any dependencies. When developing each module within our code,
   we would consistently go back and walkthrough the previous modules to make sure our program is scaling
-  together in a way such that it will eventually run as one program smoothly.
+  together in a way such that it will eventually run as one program smoothly. 
