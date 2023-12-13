@@ -37,8 +37,7 @@ increment
   and Profit/Loss Dataframe challenges and the Backend & Frontend Split changes along with this part. 
   B) Wrote the changes and updates to the requirements & design document along with updates to the diagrams. 
   C) Wrote the entirety of edits to the implementation and testing document since the last increment along 
-  with updates to execution-based functional testing, execution-based non-functional testing, and 
-  non-executional-based testing parts. D) Wrote the entirety of our backend source code including the 
+  with updates to our databases and libraries. D) Wrote the entirety of our backend source code including the 
   O_U.py file, Framework.ipynb file, updates to Trading_Signals.py, processed and info data dumps, and much 
   more. E) Did the intro and overview of the current project in our increment's video. Also discussed the 
   state of the backend,what was accomplished on the backend, a demo of the backend, our changes of scope, 
