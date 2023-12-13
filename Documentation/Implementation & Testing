@@ -20,8 +20,14 @@ Authors: Dominic Miller, Kian Haghighi, Edwin Laguerre, Ilya Kogan
 2. Platforms, APIs, Databases, and other technologies used
 - 1. Tiingo: We used Tiingo (a financial markets API) to pull the 1-minute ticker data for our project
   in the Get_Data.ipynb Jupyter Notebook in the backend source code.
-- 2.Django: We used Django to create our front-end and the MVC architecture that comes with it.
-- 3.Sqlite: We used Sqlite to store the users in our database.
+- 2. Django: We used Django to create our front-end and the MVC architecture that comes with it.
+- 3. Sqlite: We used Sqlite to store the users in our database.
+- 4. Sklearn: The library we used to implement machine learning and statistical modeling on the
+  backend.
+- 5. Pandas & Numpy: The important libraries for reading in data, converting it, and saving new files
+  to our directory.
+- 6. OS: Another important library used on the backend to get the user's direct path to the files so
+  we can properly read in the files and save them to the right locations.
 
 3. Execution-based Functional Testing
 - To perform execution-based functional testing we used Visual Studio Code, Jupyter Notebook, 
