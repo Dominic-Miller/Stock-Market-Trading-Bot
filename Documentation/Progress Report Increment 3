@@ -59,7 +59,12 @@ increment
   state of the backend,what was accomplished on the backend, a demo of the backend, our changes of scope, 
   and an overview of the completed backend for this project.
 
-- Kian Haghighi: A) B) C) D) E) 
+- Kian Haghighi: A) B) C)  
+D) Added styling to the login, register, and dashboard routes on the frontend. 
+Added the relevant routes for the frontend.
+E) Described changes to frontend and presented each of the routes on the frontend.
+Showed the code that implements the front end and how to the commands to run the web app.
+
 
 - Edwin Laguerre: A) B) C) D) E) 
 
