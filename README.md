@@ -1,8 +1,9 @@
 # ML-Trading-Bot
 This is a repository consisting of code and documentation for a stock market trading bot using Python that can 
-be used to simulate profits from day trading with a ML algorithm.
+be used to simulate profits from day trading with a ML algorithm. When run over one-minute ticker data for both
+classes of Google's stock in 2022, this bot returned over 25% in profits for the year.
 
-The "Stock Market Trading Bot" is a web application designed to empower users with the ability to create 
+The "Stock Market Trading Bot" is an application designed to empower users with the ability to create 
 and manage personalized stock portfolios. Utilizing machine learning algorithms, the bot continually
 monitors one-minute stock price data for stocks with multiple classes. It then executes day trading 
 strategiesbased on the assumption that stock prices between these two classes will regress to their mean 
