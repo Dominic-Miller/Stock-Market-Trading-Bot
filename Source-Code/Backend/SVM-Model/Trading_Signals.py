@@ -218,10 +218,10 @@ def create_list(threshold = 0.001):
         min.iloc[-10:] = spread.iloc[-10:]
 
         zero_or_one = (spread - min) > threshold # If outside threshold: 1
-        val = int(zero_or_one == True) # Convert our bool to either 0 or 1
+        val = zero_or_one.astype(int) # Convert our bool to either 0 or 1
 
         return val
-    return create_list
+    return addResiduals
 
 # Create our info 4d dataframe to be used for Framework.py
 InfoPath = path + '/Source-Code/Backend/Data/Info/'
