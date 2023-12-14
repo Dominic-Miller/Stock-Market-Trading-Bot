@@ -29,6 +29,8 @@ Group #14
   to pull data and then create the necessary files and be saved to spit out price simulations when called.
 - 5. Price Simulation: Implemented the final feature of the backend which generates a graph of the user's
   profits over 2022 when choosing to buy a specific stock.
+- 6. 25% ROI: After training the bot and running a price simulation for Google over 2022, we recieved a 25% 
+  return on investment which is over 2x as much someone would recieve on average investing in the S&P 500.
 
 4) Challenges, changes in the plan and scope of the project and things that went wrong during this
 increment
@@ -49,14 +51,14 @@ increment
 
 5) Team Member Contribution for this increment
 - Dominic Miller: A) Wrote the majority of the progress report document including the project desription,
-  OU, Framework, Info, Training, and Simulation accomplishments. Also the Linear Regression, Math Functions,
-  and Profit/Loss Dataframe challenges and the Backend & Frontend Split changes along with this part. 
-  B) Wrote the changes and updates to the requirements & design document along with updates to the diagrams. 
-  C) Wrote the entirety of edits to the implementation and testing document since the last increment along 
-  with updates to our databases and libraries. D) Wrote the entirety of our backend source code including the 
-  O_U.py file, Framework.ipynb file, updates to Trading_Signals.py, processed and info data dumps, and much 
+  OU, Framework, Info, Training, Simulation, and ROI accomplishments. Also the Linear Regression, Math 
+  Functions, and Profit/Loss Dataframe challenges and the Backend & Frontend Split changes along with this 
+  part. B) Wrote the changes and updates to the requirements & design document along with updates to the 
+  diagrams. C) Wrote the entirety of edits to the implementation and testing document since the last increment 
+  along with updates to our databases and libraries. D) Wrote the entirety of our backend source code including 
+  the O_U.py file, Framework.ipynb file, updates to Trading_Signals.py, processed and info data dumps, and much 
   more. E) Did the intro and overview of the current project in our increment's video. Also discussed the 
-  state of the backend,what was accomplished on the backend, a demo of the backend, our changes of scope, 
+  state of the backend, what was accomplished on the backend, a demo of the backend, our changes of scope, 
   and an overview of the completed backend for this project.
 
 - Kian Haghighi: A) B) C)  
