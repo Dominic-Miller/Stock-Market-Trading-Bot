@@ -107,6 +107,8 @@ Authors: Dominic Miller, Kian Haghighi, Edwin Laguerre, Ilya Kogan
 - 11. Disaster Recovery:
     - The system shall have a disaster recovery plan in place to ensure data backup, redundancy, and a quick recovery 
    in case of system failures or disasters. This is essential to minimize downtime and data loss.
+-12. Seamless User Experience and Design:
+   -The system shall have an interface that adds to the experience for users and makes the web app easy to navigate.
 
 
 -  Rationale: These non-functional requirements are essential for the stock trading bot to provide a secure, 
