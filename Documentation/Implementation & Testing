@@ -35,7 +35,8 @@ Authors: Dominic Miller, Kian Haghighi, Edwin Laguerre, Ilya Kogan
   with the data API to test the functional requirements that this product must do, we tried a bunch
   of different stock tickers and went through the data that was saved to the data dump folder to 
   check if the data processed right and had any errors. If there were any errors, the data was 
-  discared and the stock will not be included in our final product.
+  discared and the stock will not be included in our final product. We tested the front-end locally
+  by running the web app with "python manage.py runserver"
 
 4. Execution-based Non-Functional Testing
 - To perform execution-based non-functional testing we used a different approach from our functional
