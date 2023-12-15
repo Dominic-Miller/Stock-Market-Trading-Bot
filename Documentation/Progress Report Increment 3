@@ -61,16 +61,12 @@ increment
   state of the backend, what was accomplished on the backend, a demo of the backend, our changes of scope, 
   and an overview of the completed backend for this project.
 
-- Kian Haghighi: 
-A)Wrote about progress to the front end and what the finishing product looks like  
-B)Edited the description of user authentication and registration to describe how 
-a seamless user experience and user design is a requirement.
-C)Explained how to run the front-end and view the pages on the front end.
-D) Added styling to the login, register, and dashboard routes on the front end. 
-Added the relevant routes for the front end.
-E) Described changes to the front end and presented each of the routes on the front end.
-Showed the code that implements the front end and how to the commands to run the web app.
-
+- Kian Haghighi: A)Wrote about progress to the front end and what the finishing product looks like  
+  B)Edited the description of user authentication and registration to describe how a seamless user experience
+  and user design is a requirement. C)Explained how to run the front-end and view the pages on the front end.
+  D) Added styling to the login, register, and dashboard routes on the front end. Added the relevant routes for 
+  the front end.E) Described changes to the front end and presented each of the routes on the front end.
+  Showed the code that implements the front end and how to the commands to run the web app.
 
 - Edwin Laguerre: A) B) C) D) E) 
 
@@ -87,4 +83,4 @@ Showed the code that implements the front end and how to the commands to run the
 - This was our final increment.
 
 7) Link to video
-
+https://youtu.be/20Bi2rOhbC8
