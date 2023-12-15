@@ -5,8 +5,8 @@ Group #14
 1) Team Members
 - Kian Haghighi (FSU ID: kh21e, GitHub ID: KianHaghighi)
 - Dominic Miller (FSU ID: dgm21, Github ID: Dominic-Miller)
-- Edwin Laguerre (FSU ID: el21l, Github ID: Edwinlaguerre)
 - Ilya Kogan (FSU ID: ik22g, Github ID: kogan782)
+- Edwin Laguerre (FSU ID: el21l, Github ID: Edwinlaguerre)
 
 2) Project Title and Description
 - Stock Market Trading Bot
@@ -74,7 +74,14 @@ Showed the code that implements the front end and how to the commands to run the
 
 - Edwin Laguerre: A) B) C) D) E) 
 
-- Ilya Kogan: A) B) C) D) E) 
+- Ilya Kogan: A) Discussed changes in the front end, how it was updated and the changes that were
+  involved. Also wrote about how the product is supposed to look like, and some of its features.
+  B) Made it more interactive to the user, updated some CSS code to make it look better. Integrated 
+  HTML and CSS documents with Django to maximize efficieny.C) Talked about the changes done to the 
+  CSS and HTML file, to make it more interactive with the user. Discussed how the HTML and CSS files 
+  interacted with Django. D) Added some features to the front end to make it look better. Updated it 
+  to make it more interactive and not as basic. Added animation to it. E) Discussed changes to the front
+  end and the new implementations that were added and how it could have been done better.
 
 6) Plans for the next increment
 - This was our final increment.
