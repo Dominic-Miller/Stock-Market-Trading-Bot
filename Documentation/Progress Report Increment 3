@@ -68,7 +68,12 @@ increment
   the front end.E) Described changes to the front end and presented each of the routes on the front end.
   Showed the code that implements the front end and how to the commands to run the web app.
 
-- Edwin Laguerre: A) B) C) D) E) 
+- Edwin Laguerre: A) Did not write much of the progress report besides the team contribution section. B) Did 
+  not write much of the design document for this increment. C) Did not write anything in the implementation 
+  and testing document since I have yet to implement any code as I have spent my time familiarizing myself 
+  with Python and the code we already have. D) As stated above, have not written any of the source code yet 
+  and have been familiarizing myself with what we have. E) demonstrated what parts of the back-end and the
+  front-end we have currently.
 
 - Ilya Kogan: A) Discussed changes in the front end, how it was updated and the changes that were
   involved. Also wrote about how the product is supposed to look like, and some of its features.
