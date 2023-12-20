@@ -11,49 +11,31 @@ Progress Report
   have looked like.
 
 2) Accomplishments and overall project status during this increment
-- 1. User Authentication and Registration: A basic HTML webpage was created as a demo for our frontend
-  and a nice user authentication method was implemented to allow users to create login information.
-  This stands around 20% done compared to our initial scope and functionality proposed. We have a long
-  way to go with implementing a portfolio selection algorithm for all users.
-- 2. Real-Time Market Data: Real-time market data was found and a python program was created which allows
+- 1. Real-Time Market Data: Real-time market data was found and a python program was created which allows
   a user to implement the ticker for the stock they are interested in along with the start and end date 
   ranges. This function returns all of the data for that stock with each minute ticker within the date
-  range. This is fully implemented 100% how we wanted it in our initial scope. We will be able to use this
-  to automatically save csvs for a variety of differnt stocks and allow our trading bot amazing data to be 
+  range. This is fully implemented 100% how I wanted it in our initial scope. I will be able to use this
+  to automatically save CSVs for a variety of differnt stocks and allow our trading bot amazing data to be 
   trained on.
-- 3. GitHub: During this increment, the bulk of our time was spent planning and developing our GitHub so we
-  are prepared for the future increments. We have a bulk of issues in the backlog which allows us a good framework
-  to develop in increments 2 & 3. This is how we initially planned our project to go and we believe this is as 
+- 2. GitHub: During this increment, the bulk of my time was spent planning and developing our GitHub so I
+  am prepared for the future increments. I have a bulk of issues in the backlog which allows a good framework
+  to develop in increments 2 & 3. This is how I initially planned our project to go and I believe this is as 
   functional as it needs to be for the future of our project.
-- 4. Web layout: When working on this increment, HTML and Django was used to create a layout of what the 
-  user will see on the webpage. Provides a framework on how to implement CSS to style HTML elements, to 
-  make it more user friendly. The webpage be what the user see's and how they interact with trades with the
-  ML-trading bot.
 
 3) Challenges, changes in the plan and scope of the project and things that went wrong during this increment
 - 1. Finding Data: As displayed through the commits metadata, finding data took the bulk of this 
-  increment for the backend. We began with yahoo finance data but quickly realized this would not be
-  good enough since so many minute tickers were missing. We found a new API called tiingo which many
-  hedge funds use and developed a program to pull any trading data we wanted for any given range. This
-  is great, however since model training takes so long we now realize we will likely not be able to have
-  as large of a catalog of options as we once hoped. 
-- 2. User Authentication: A lot of work went into creating a program which allows users to authenticate
-  their login information and create an account. This is not something any of us have done before so this
-  was a challenge. However, we implemented it how we hoped and believe this will help us in the coming
-  increments.
-- 3. Programming Languages: A lot of thought went into how we will connect the backend with the frontend. 
-  We originally hoped to implement C++ into our project since this is the langauge we are all taught at FSU,
-  however we now realize that this will be much more difficult and we will stick to Python for the backend  
+  increment for the backend. I began with yahoo finance data but quickly realized this would not be
+  good enough since so many minute tickers were missing. I found a new API called tiingo which many
+  hedge funds use and developed a program to pull any trading data I wanted for any given range. This
+  is great, however since model training takes so long I now realize I will likely not be able to have
+  as large of a catalog of options as I once hoped. 
+- 2. Programming Languages: A lot of thought went into how I will connect the backend with the frontend. 
+  I originally hoped to implement C++ into our project since this is the langauge we are all taught at FSU,
+  however I now realize that this will be much more difficult and I will stick to Python for the backend  
   since it connects much nicer with the frontend.
-- 4. Web Page: Time was spent thinking about how to design the web page to make it more user friendly. Since
-  HTML and CSS are tools that haven't been used often in our curriculum, there is a bit of a learning curve
-  as to how to implement it the best way possible, where it is easy for the user to understand.
 
 4) Plans for the next increment
-- In the next increment, we plan on fully implementing the backend for this project. This will include 
-  writing all the code needed to train our ML bots and actually training our models so that when we
-  finish our web application, we can simply connect the backend to this application and the simulations
-  will run based on user input. We also plan to create the framework for our web application, like the user
-  authentication, so once we get to increment 3 we can begin working immediately. For the front-end we will
-  brush up on the display to make it more easier for the user to enter in data as well as display it. CSS will
-  be implemented to HTML templates to control the presentation and layout of webpage offered.
+- In the next increment, I plan on fully implementing the backend for this project. This will include 
+  writing all the code needed to train our ML bots and actually training our models so that when I
+  finish the web application, I can simply connect the backend to this application and the simulations
+  will run based on user input.
