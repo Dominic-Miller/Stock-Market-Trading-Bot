@@ -1,8 +1,5 @@
 Software Requirements and Design Document
-Group #14
-Version 3.0
-Authors: Dominic Miller, Kian Haghighi, Edwin Laguerre, Ilya Kogan
-
+Version 3.1
 
 1. Overview
 -  The "Stock Market Trading Bot" is a web application designed to empower users with the ability to 
@@ -107,7 +104,8 @@ Authors: Dominic Miller, Kian Haghighi, Edwin Laguerre, Ilya Kogan
 - 11. Disaster Recovery:
     - The system shall have a disaster recovery plan in place to ensure data backup, redundancy, and a quick recovery 
    in case of system failures or disasters. This is essential to minimize downtime and data loss.
--12. Seamless User Experience and Design:
+
+- 12. Seamless User Experience and Design:
    -The system shall have an interface that adds to the experience for users and makes the web app easy to navigate.
 
 
