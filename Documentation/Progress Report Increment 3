@@ -1,14 +1,7 @@
 Progress Report
 - Increment 3 -
-Group #14
 
-1) Team Members
-- Kian Haghighi (FSU ID: kh21e, GitHub ID: KianHaghighi)
-- Dominic Miller (FSU ID: dgm21, Github ID: Dominic-Miller)
-- Ilya Kogan (FSU ID: ik22g, Github ID: kogan782)
-- Edwin Laguerre (FSU ID: el21l, Github ID: Edwinlaguerre)
-
-2) Project Title and Description
+1) Project Title and Description
 - Stock Market Trading Bot
 - The idea behind this project is to develop a web application where users can go in and create their 
   own portfolio of stocks from a handful of available options to be traded by a ML bot. The bot will 
@@ -17,7 +10,7 @@ Group #14
   simulation on this data and portfolio contents over the previous year and see what the earnings would 
   have looked like.
 
-3) Accomplishments and overall project status during this increment
+2) Accomplishments and overall project status during this increment
 - 1. OU Model: In this increment, we finished the entiretly of the OU model which includes an OU class
   that will create a 4d dataframe of our profits and losses when linked to our trading signals and 
   framework files.
@@ -32,7 +25,7 @@ Group #14
 - 6. 25% ROI: After training the bot and running a price simulation for Google over 2022, we recieved a 25% 
   return on investment which is over 2x as much someone would recieve on average investing in the S&P 500.
 
-4) Challenges, changes in the plan and scope of the project and things that went wrong during this
+3) Challenges, changes in the plan and scope of the project and things that went wrong during this
 increment
 - 1. Linear Regression: Had a lot of issues on the backend when trying to calculate the linear regression.
   Kept getting the same error where all x values were the same for both class datasets. This ended up being
@@ -49,43 +42,5 @@ increment
   frontend for our project are not fully connected. You can still run this project using just the backend
   and get an idea of what it would look like on the frontend when connected.
 
-5) Team Member Contribution for this increment
-- Dominic Miller: A) Wrote the majority of the progress report document including the project desription,
-  OU, Framework, Info, Training, Simulation, and ROI accomplishments. Also the Linear Regression, Math 
-  Functions, and Profit/Loss Dataframe challenges and the Backend & Frontend Split changes along with this 
-  part. B) Wrote the changes and updates to the requirements & design document along with updates to the 
-  diagrams. C) Wrote the entirety of edits to the implementation and testing document since the last increment 
-  along with updates to our databases and libraries. D) Wrote the entirety of our backend source code including 
-  the O_U.py file, Framework.ipynb file, updates to Trading_Signals.py, processed and info data dumps, and much 
-  more. E) Did the intro and overview of the current project in our increment's video. Also discussed the 
-  state of the backend, what was accomplished on the backend, a demo of the backend, our changes of scope, 
-  and an overview of the completed backend for this project.
-
-- Kian Haghighi: A)Wrote about progress to the front end and what the finishing product looks like  
-  B)Edited the description of user authentication and registration to describe how a seamless user experience
-  and user design is a requirement. C)Explained how to run the front-end and view the pages on the front end.
-  D) Added styling to the login, register, and dashboard routes on the front end. Added the relevant routes for 
-  the front end.E) Described changes to the front end and presented each of the routes on the front end.
-  Showed the code that implements the front end and how to the commands to run the web app.
-
-- Edwin Laguerre: A) Did not write much of the progress report besides the team contribution section. B) Did 
-  not write much of the design document for this increment. C) Did not write anything in the implementation 
-  and testing document since I have yet to implement any code as I have spent my time familiarizing myself 
-  with Python and the code we already have. D) As stated above, have not written any of the source code yet 
-  and have been familiarizing myself with what we have. E) demonstrated what parts of the back-end and the
-  front-end we have currently.
-
-- Ilya Kogan: A) Discussed changes in the front end, how it was updated and the changes that were
-  involved. Also wrote about how the product is supposed to look like, and some of its features.
-  B) Made it more interactive to the user, updated some CSS code to make it look better. Integrated 
-  HTML and CSS documents with Django to maximize efficieny.C) Talked about the changes done to the 
-  CSS and HTML file, to make it more interactive with the user. Discussed how the HTML and CSS files 
-  interacted with Django. D) Added some features to the front end to make it look better. Updated it 
-  to make it more interactive and not as basic. Added animation to it. E) Discussed changes to the front
-  end and the new implementations that were added and how it could have been done better.
-
-6) Plans for the next increment
-- This was our final increment.
-
-7) Link to video
-https://youtu.be/aOWa9VPfA6A
+4) Plans for the next increment
+- This was the final increment.
