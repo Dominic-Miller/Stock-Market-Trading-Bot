@@ -1,19 +1,17 @@
 Software Implementation and Testing Document
-Group #14
-Version 3.0
-Authors: Dominic Miller, Kian Haghighi, Edwin Laguerre, Ilya Kogan
+Version 3.1
 
 1. Programming Languages
-- 1. Python: We use Python almost exclusively for the backend of the project including the
+- 1. Python: I used Python almost exclusively for the backend of the project including the
   accessing of data and training of our trading bot. We chose Python since it has many
   built in libraries like Tensorflow, pandas, numpy, etc... and this works well with
   machine learning and data management.
-- 2. HTML: We used HTML to interact with and serve as a template to django allowing us to 
+- 2. HTML: Used HTML to interact with and serve as a template to django allowing us to 
   develop a webpage with the help of django's template engine. It uses templatesto display 
   market trends and allow users to interact with the trading bot through a web interface.
 - 3. Django: Used in combination with HTML in the frontend to create the user authentication
   and registration. Pairs well with HTML so was the obvious choice.
-- 4. CSS: We will use CSS and implement it into our HTML documents, to make the data shown more 
+- 4. CSS: Used CSS and implement it into our HTML documents, to make the data shown more 
   presentable and help make the layout look better. It will create a more responsive web-design,
   improve readability for users while making it more visually appealing.
 
