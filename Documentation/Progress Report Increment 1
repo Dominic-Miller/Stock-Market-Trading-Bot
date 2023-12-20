@@ -1,14 +1,7 @@
 Progress Report
 - Increment 1 -
-Group #14
 
-1) Team Members
-- Kian Haghighi (FSU ID: kh21e, GitHub ID: KianHaghighi)
-- Dominic Miller (FSU ID: dgm21, Github ID: Dominic-Miller)
-- Edwin Laguerre (FSU ID: el21l, Github ID: Edwinlaguerre)
-- Ilya Kogan (FSU ID: ik22g, Github ID: kogan782)
-
-2) Project Title and Description
+1) Project Title and Description
 - Stock Market Trading Bot
 - The idea behind this project is to develop a web application where users can go in and create their 
   own portfolio of stocks from a handful of available options to be traded by a ML bot. The bot will 
@@ -17,7 +10,7 @@ Group #14
   simulation on this data and portfolio contents over the previous year and see what the earnings would 
   have looked like.
 
-3) Accomplishments and overall project status during this increment
+2) Accomplishments and overall project status during this increment
 - 1. User Authentication and Registration: A basic HTML webpage was created as a demo for our frontend
   and a nice user authentication method was implemented to allow users to create login information.
   This stands around 20% done compared to our initial scope and functionality proposed. We have a long
@@ -37,8 +30,7 @@ Group #14
   make it more user friendly. The webpage be what the user see's and how they interact with trades with the
   ML-trading bot.
 
-4) Challenges, changes in the plan and scope of the project and things that went wrong during this increment
-
+3) Challenges, changes in the plan and scope of the project and things that went wrong during this increment
 - 1. Finding Data: As displayed through the commits metadata, finding data took the bulk of this 
   increment for the backend. We began with yahoo finance data but quickly realized this would not be
   good enough since so many minute tickers were missing. We found a new API called tiingo which many
@@ -57,43 +49,7 @@ Group #14
   HTML and CSS are tools that haven't been used often in our curriculum, there is a bit of a learning curve
   as to how to implement it the best way possible, where it is easy for the user to understand.
 
-5) Team Member Contribution for this increment
-
-- Dominic Miller: A) Wrote the description of our project, accomplishment this increment,
-  challenges faced in this increment, and plans for our next increment for the progrss report 
-  document. B) Contributed to the layout of the requirements and design document along with the 
-  functional and non-functional requirements gathering. C) Wrote the use of Python in our project
-  along with the use of Tiingo, our financial market API. D) Set up the GitHub layout and created a 
-  group of issues that need to be addressed in this project. Found the ticker data for a handful of 
-  stocks that will be useful in training our model and began developing the trading bot's backend. 
-  Developed a function that allows a user to input a ticker name and date range and returns all 1-minute 
-  ticker data for that range and automatically saves it as a csv to our files. E) Did the introduction, 
-  the description and demo for the backend of our project, the changes in scope during this increment, 
-  and the plans for next increment for the video.
-
-- Kian Haghighi: A)Documented the struggles of combining Django with the HTMl templates for a functional 
-  front-end, planned how the front-end and back-end will work together B) Wrote sections 1,2,3,6 of the 
-  Software Requirements and Design Document C) Wrote about Django in the implementation and design document 
-  in the "5-develop-web-app" branch D)Wrote the Django code and set up the virtual environment E) Discussed 
-  the front-end in the video
-
-- Edwin Laguerre: A) Did not write much on the progress report besides the anwers to this question B) Helped 
-  when discussing how we were gonna go about the design and what features will be added C) Did not write 
-  anything in the implementation and testing document since I have yet to implement any code D) I have yet to 
-  add anything to the source code E) Talked about the models we were going to use within our code for specific
-  parts and functionality 
-
-- Ilya Kogan: A) Talked about some of the challenges on the front-end side of things, and discussed some
-  of the tools used such as HTML and CSS. Discussed how CSS will be implemented into the next increment and 
-  how it offer a more presentable layout for the user. B) Discussed in the overview how users will interact with 
-  the trading bot and how it will be implemented. C) Discussed how HTML was used to interact with Django for 
-  the webpage layout, and provided a foundation to how it will displayed. D) Focused on the front-end 
-  side of things, created a Template folder that stores the HTML file that interacts with Django. Will 
-  display to users market trends and trades that can be made. E) Described what the HTML file does and 
-  how it interacts with Django, and displayed the webpage where a user can interact with a trading bot
-  to see trends through a web interface.
-
-6) Plans for the next increment
+4) Plans for the next increment
 - In the next increment, we plan on fully implementing the backend for this project. This will include 
   writing all the code needed to train our ML bots and actually training our models so that when we
   finish our web application, we can simply connect the backend to this application and the simulations
@@ -101,6 +57,3 @@ Group #14
   authentication, so once we get to increment 3 we can begin working immediately. For the front-end we will
   brush up on the display to make it more easier for the user to enter in data as well as display it. CSS will
   be implemented to HTML templates to control the presentation and layout of webpage offered.
-
-7) Link to video
-- https://youtu.be/Y0Ba4BHlwGY
