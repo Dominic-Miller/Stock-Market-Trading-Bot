@@ -1,14 +1,7 @@
 Progress Report
 - Increment 2 -
-Group #14
 
-1) Team Members
-- Kian Haghighi (FSU ID: kh21e, GitHub ID: KianHaghighi)
-- Dominic Miller (FSU ID: dgm21, Github ID: Dominic-Miller)
-- Edwin Laguerre (FSU ID: el21l, Github ID: Edwinlaguerre)
-- Ilya Kogan (FSU ID: ik22g, Github ID: kogan782)
-
-2) Project Title and Description
+1) Project Title and Description
 - Stock Market Trading Bot
 - The idea behind this project is to develop a web application where users can go in and create their 
   own portfolio of stocks from a handful of available options to be traded by a ML bot. The bot will 
@@ -17,7 +10,7 @@ Group #14
   simulation on this data and portfolio contents over the previous year and see what the earnings would 
   have looked like.
 
-3) Accomplishments and overall project status during this increment
+2) Accomplishments and overall project status during this increment
 - 1. Data Dump: In this increment, all of the necessary data that will be needed to train the 
   bot was retrieved and has been placed into a new data dump folder in the backend code. We
   will use this data for stocks with multiple classes to compare the ticker data to one another
@@ -34,7 +27,7 @@ Group #14
 - 5. Incorporated CSS into HTML file, making the page more user friendly and visually appealing
   to those viewing it.
 
-4) Challenges, changes in the plan and scope of the project and things that went wrong during this
+3) Challenges, changes in the plan and scope of the project and things that went wrong during this
 increment
 - 1. Data processing error: Still stuggling with an error where I can only run the data on my own computer.
   Right now, the file path is set to my computer's path where the file is stored, however when other users
@@ -50,48 +43,10 @@ increment
   more about the algorithms hedge funds use, it became obvious that we would only be able to use stocks that
   have two classes to begin with since we will easily be able to predict convergence and divergence this way.
 
-5) Team Member Contribution for this increment
-- Dominic Miller: A) Wrote the majority of the progress report document including the project desription,
-  data dump and trading signals accomplishments, data processing error, trading signals challenge, and 
-  multiple data sets challenges and change of scope, and the plans for the next increment along with this 
-  part. B) Determined and wrote two of the new functional requirements (data API and trading signals) in 
-  the requirements and design document along with the use case and class diagrams. C) Wrote the entirety 
-  of edits to the implementation and testing document since the last increment along with the new parts 
-  included for increment 2 including the execution-based functional testing, execution-based non-functional 
-  testing, and non-executional-based testing parts. D) Wrote the entirety of our backend source code 
-  including the data dump, get_data.py, and trading_signals.py python code files. E) Did the intro and 
-  overview of the current project in our increment's video. Also discussed the state of the backend,
-  what was accomplished on the backend, a demo of the backend, our changes of scope, and what we plan
-  to accomplish in the next increment on the backend.
-
-- Kian Haghighi: A) Wrote about the improvements to the front-end, including user authentication and 
-  registration and profile page B) Added the profile page functional requirement as well as edited the 
-  user authentication and user authorization functional requirement. C) Added Django and Sqlite to the 
-  "2. Platforms, APIs, Databases, and other technologies used" section along with the various descriptions
-  D) Wrote all of the code for the user authentication and registration in the front-end source code with 
-  Django. Wrote the code for the profile page. E) Created the section of the video that describes the code
-  added for user authentication and registration and profile view and show the functionality.
-
-- Edwin Laguerre: A) Did not write much of the progress report besides the team contribution section. B) Did 
-  not write much of the design document for this increment. C) Did not write anything in the implementation 
-  and testing document since I have yet to implement any code as I have spent my time familiarizing myself 
-  with Python and the code we already have. D) As stated above, have not written any of the source code yet 
-  and have been familiarizing myself with what we have. E) Talked about the plans for the backend in the video.
-
-- Ilya Kogan: A) Talked about the implemention of CSS into HTML to make it more visually appealing for the 
-  the user. B) Discussed in overview how users will interact with the trading bot. C) Discussed how HTML
-  and CSS will be used to interact with Django and provided somewhat of a foundation to how it will be 
-  displayed using CSS. D) Created a CSS document that interacts with HTML to make it much more enhanced.
-  E) Created a section of the video that describes what the CSS file does with HTML and went over how 
-  it looks from the users perspective.
-
-6) Plans for the next increment
+4) Plans for the next increment
 - Since the next increment is our last, we plan to fully finish the bot by developing the OU model and
   framework to train the ML algorithm. On the front end, we still need to finish creating our web application
   and finally connect the backend to the front end so the application will run smoothly. Any time a user 
   picks out some stocks for their portfolio, they will be promted to buy a certain amount of each stock
   and then the algorithm will run and display a graph of the profits from the bot vs. the profits without
   the bot.
-
-7) Link to video
-https://youtu.be/NxRUJLIZQCQ
