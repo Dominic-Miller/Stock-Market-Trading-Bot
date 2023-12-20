@@ -11,7 +11,7 @@ Progress Report
   have looked like.
 
 2) Accomplishments and overall project status during this increment
-- 1. OU Model: In this increment, we finished the entiretly of the OU model which includes an OU class
+- 1. OU Model: In this increment, I finished the entiretly of the OU model which includes an OU class
   that will create a 4d dataframe of our profits and losses when linked to our trading signals and 
   framework files.
 - 2. Framework & Backtesting: Finished the Framework.py file which declares necessary mathematic functions
@@ -22,7 +22,7 @@ Progress Report
   to pull data and then create the necessary files and be saved to spit out price simulations when called.
 - 5. Price Simulation: Implemented the final feature of the backend which generates a graph of the user's
   profits over 2022 when choosing to buy a specific stock.
-- 6. 25% ROI: After training the bot and running a price simulation for Google over 2022, we recieved a 25% 
+- 6. 25% ROI: After training the bot and running a price simulation for Google over 2022, I recieved a 25% 
   return on investment which is over 2x as much someone would recieve on average investing in the S&P 500.
 
 3) Challenges, changes in the plan and scope of the project and things that went wrong during this
@@ -33,12 +33,12 @@ increment
   dataset 1 and 2 to the values of dataset 1.
 - 2. Math Functions: There were many math functions like calculated the sharpe and sortino ratios which were 
   necessary to create our profit/loss dataframe. These math functions were rather hard to develop since it is
-  a side of programming we are not necessarily used to.
+  a side of programming I am not necessarily used to.
 - 3. Profit/Loss Dataframe: As mentioned above, creating the profit/loss dataframe was a big challenge with
   this increment. The idea of a 4 dimensional dataframe is incomprehensible and therefore the info files 
-  cannot be opened on our computers. This made it a struggle to make sure that the data we were feeding
+  cannot be opened on our computers. This made it a struggle to make sure that the data I was feeding
   into the bot was completely accurate and did not have any major errors.
-- 4. Backend & Frontend Split: Due to inadequate planning and developmental procedures, our backend and
+- 4. Backend & Frontend Split: Due to inadequate planning and developmental procedures, the backend and
   frontend for our project are not fully connected. You can still run this project using just the backend
   and get an idea of what it would look like on the frontend when connected.
 
