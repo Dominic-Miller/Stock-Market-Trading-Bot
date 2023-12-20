@@ -12,40 +12,33 @@ Progress Report
 
 2) Accomplishments and overall project status during this increment
 - 1. Data Dump: In this increment, all of the necessary data that will be needed to train the 
-  bot was retrieved and has been placed into a new data dump folder in the backend code. We
+  bot was retrieved and has been placed into a new data dump folder in the backend code. I
   will use this data for stocks with multiple classes to compare the ticker data to one another
   to predict divergence and convergence in our model.
 - 2. Trading Signals: The trading signals were developed alone with the processed data including
   price residuals and buy/sell indicators. This will allow our bot to predict to either buy or 
-  sell the stock, then we will tell the ML algorithm if it is correct so it can adjust it's 
+  sell the stock, then I will tell the ML algorithm if it is correct so it can adjust it's 
   biases and future predictions. This is a very big step in the process of training our bot.
-- 3. User authentication and registration: Users can know register themselves as users as well 
-  as login. Users can
-  also see the amount of money that is currently in their profile.
-- 4. Profile Page: Users can see how much money is in their account and how much the funds in 
-  their account have changed.
-- 5. Incorporated CSS into HTML file, making the page more user friendly and visually appealing
-  to those viewing it.
 
 3) Challenges, changes in the plan and scope of the project and things that went wrong during this
 increment
 - 1. Data processing error: Still stuggling with an error where I can only run the data on my own computer.
   Right now, the file path is set to my computer's path where the file is stored, however when other users
-  run this program we want to make it ambiguous so the path can be accessed by anyone.
-- 2. Developing trading signals: This was a difficult process in this increment. After figuring out we 
-  would need two separate data sets, we needed to develop some trading signals to train the bot with.
+  run this program I want to make it ambiguous so the path can be accessed by anyone.
+- 2. Developing trading signals: This was a difficult process in this increment. After figuring out I
+  would need two separate data sets, I needed to develop some trading signals to train the bot with.
   These would be used to predict the convergence or divergence of the two classes. By implementing these,
-  we will be able to train our bot effeciently based on many factors such as price and volume.
+  I will be able to train our bot effeciently based on many factors such as price and volume.
 - 3. SVM model requires two data sets: This is the largest change from our original plan on the backend.
-  Originally, we thought we would be able to train the bot to predict prices for any stock, however many
-  algorithms used by hedge funds already do this so the methods are not effective. Rather, we have to 
+  Originally, I thought I would be able to train the bot to predict prices for any stock, however many
+  algorithms used by hedge funds already do this so the methods are not effective. Rather, I have to 
   use two separate data sets to compare to one another and predict convergence or divergence. After reading
-  more about the algorithms hedge funds use, it became obvious that we would only be able to use stocks that
-  have two classes to begin with since we will easily be able to predict convergence and divergence this way.
+  more about the algorithms hedge funds use, it became obvious that I would only be able to use stocks that
+  have two classes to begin with since I will easily be able to predict convergence and divergence this way.
 
 4) Plans for the next increment
-- Since the next increment is our last, we plan to fully finish the bot by developing the OU model and
-  framework to train the ML algorithm. On the front end, we still need to finish creating our web application
+- Since the next increment is our last, I plan to fully finish the bot by developing the OU model and
+  framework to train the ML algorithm. On the front end, I still need to finish creating the web application
   and finally connect the backend to the front end so the application will run smoothly. Any time a user 
   picks out some stocks for their portfolio, they will be promted to buy a certain amount of each stock
   and then the algorithm will run and display a graph of the profits from the bot vs. the profits without
