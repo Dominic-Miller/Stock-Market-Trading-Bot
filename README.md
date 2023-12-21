@@ -23,4 +23,5 @@ backtest trading strategies with historical data while mitigating irrational tra
 emotions. It will provide a clear and intuitive dashboard that shows users the overview of the portfolio's 
 performance, recent trades, and market trends presenting data in an easily digestable form.
 
+Graph of profit/loss percentage versus time for Google over 2022:
 <img width="601" alt="Google Returns 2022" src="https://github.com/Dominic-Miller/Stock-Market-Trading-Bot/assets/98434708/faf16cfe-9e07-4cd0-87fe-547c8ae926e0">
